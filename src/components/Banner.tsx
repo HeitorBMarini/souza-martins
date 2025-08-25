@@ -31,13 +31,13 @@ export default function Banner() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="min-h-[84vh] flex items-center">
           <div className="max-w-3xl pt-52">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
               Não é só metal, é{" "}
               <span className="text-white/90">tranquilidade</span>
               <br />
               Estruturas que garantem sua{" "}
               <span className="text-white">segurança.</span>
-            </h1>
+            </h2>
 
             <div className="mt-8">
               <Link href="/contato">

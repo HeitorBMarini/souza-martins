@@ -63,7 +63,7 @@ export default function Header() {
 
   return (
     <header className="w-full absolute top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 pt-14 pb-8 sm:pb-7 sm:px-6 lg:px-8 top-0 left-0 right-0 bg-black sm:bg-transparent">
+      <div className="mx-auto max-w-7xl px-4 pt-14 pb-8 sm:pb-7 sm:px-6 lg:px-8 top-0 left-0 right-0 bg-primary sm:bg-transparent">
         <div className="h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -132,7 +132,7 @@ export default function Header() {
 
       {/* Mobile nav */}
       {openMobile && (
-        <div className="md:hidden border-t border-zinc-800 bg-zinc-900 backdrop-blur">
+        <div className="md:hidden border-t border-zinc-800 bg-primary backdrop-blur">
           <div className="px-4 py-3 space-y-1">
             {/* Home / Sobre nós */}
             {MAIN_LINKS.slice(0, 2).map((item) => {
@@ -163,7 +163,7 @@ export default function Header() {
               <DropdownMenuContent
                 align="start"
                 sideOffset={4}
-                className="w-[100vw] mx-0 rounded-none border-0 bg-zinc-800 text-white"
+                className="w-[100vw] mx-0 rounded-none border-0 bg-primary text-white"
               >
                 <DropdownMenuLabel className="px-3 py-2 text-xs uppercase tracking-widest text-zinc-400">
                   Serviços

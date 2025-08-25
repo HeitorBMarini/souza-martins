@@ -48,7 +48,7 @@ export default function ServicosLayout({ children }: { children: ReactNode }) {
                 return (
                   <span key={href} className="inline-flex items-center gap-2">
                     <BreadcrumbSeparator>
-                      <ChevronRight size={14} className="text-zinc-400" />
+                      <ChevronRight size={14} className="text-black" />
                     </BreadcrumbSeparator>
                     <BreadcrumbItem>
                       {idx === segments.length - 1 ? (
