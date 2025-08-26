@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
 import ServicosHome from "@/components/ServicosHome";
