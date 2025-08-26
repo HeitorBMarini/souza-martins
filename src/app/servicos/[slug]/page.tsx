@@ -1,31 +1,43 @@
+// src/app/servicos/[slug]/page.tsx
 import { notFound } from "next/navigation";
-// Define the type for route params manually
-type ServicoPageProps = { params: { slug: string } };
-
+import type { Metadata } from "next";
 import { SoldaSection } from "../index";
 
-const SERVICE_COMPONENTS: Record<string, React.FC> = {
+// mapa slug -> componente
+const SERVICE_COMPONENTS = {
   solda: SoldaSection,
-};
-export default function ServicoPage({ params }: ServicoPageProps) {
-  const Comp = SERVICE_COMPONENTS[params.slug];
+  // serralheria: SerralheriaSection,
+  // estruturas: EstruturasSection,
+} as const;
+
+type Slug = keyof typeof SERVICE_COMPONENTS;
+
+export default async function ServicoPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params; // 👈 aguarde params
+  const Comp = SERVICE_COMPONENTS[slug as Slug];
 
   if (!Comp) return notFound();
-
   return <Comp />;
 }
 
-
-export function generateStaticParams() {
-  return Object.keys(SERVICE_COMPONENTS).map((slug) => ({ slug }));
-}
-export function generateMetadata({ params }: ServicoPageProps) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params; // 👈 aguarde params
   const titles: Record<string, string> = {
     solda: "Solda | Serviços",
     serralheria: "Serralheria | Serviços",
     estruturas: "Estruturas Metálicas | Serviços",
   };
-
-  return { title: titles[params.slug] ?? "Serviços" };
+  return { title: titles[slug] ?? "Serviços" };
 }
 
+export function generateStaticParams() {
+  return Object.keys(SERVICE_COMPONENTS).map((slug) => ({ slug }));
+}
