@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, ChevronDown, X } from "lucide-react";
 
 import {
@@ -60,10 +60,22 @@ function NavLink({
 export default function Header() {
   const pathname = usePathname();
   const [openMobile, setOpenMobile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="w-full absolute top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 pt-14 pb-8 sm:pb-7 sm:px-6 lg:px-8 top-0 left-0 right-0 bg-primary sm:bg-transparent">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all
+        ${scrolled ? "bg-primary/95 backdrop-blur border-b border-white/10 shadow-sm" : "bg-primary sm:bg-transparent"}
+      `}
+    >
+      <div className="mx-auto max-w-7xl px-4 pt-14 pb-8 sm:pb-7 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -114,27 +126,21 @@ export default function Header() {
             aria-expanded={openMobile}
           >
             <span className="relative block h-6 w-6">
-              {/* Ícone Menu */}
               <Menu
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
-                  }`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}`}
               />
-              {/* Ícone X */}
               <X
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
-                  }`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}`}
               />
             </span>
           </button>
-
         </div>
       </div>
 
       {/* Mobile nav */}
       {openMobile && (
-        <div className="md:hidden border-t border-zinc-800 bg-primary backdrop-blur">
+        <div className="md:hidden border-t border-white/10 bg-primary/95 backdrop-blur">
           <div className="px-4 py-3 space-y-1">
-            {/* Home / Sobre nós */}
             {MAIN_LINKS.slice(0, 2).map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -142,8 +148,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpenMobile(false)}
-                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${isActive ? "text-white" : "text-zinc-300 hover:text-white"
-                    }`}
+                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${isActive ? "text-white" : "text-zinc-300 hover:text-white"}`}
                 >
                   {item.label}
                 </Link>
@@ -159,7 +164,6 @@ export default function Header() {
                 </button>
               </DropdownMenuTrigger>
 
-              {/* Submenu full width + fundo preto */}
               <DropdownMenuContent
                 align="start"
                 sideOffset={4}
@@ -183,13 +187,10 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-
-            {/* Contato */}
             <Link
               href="/contato"
               onClick={() => setOpenMobile(false)}
-              className={`block px-3 py-2 text-sm uppercase tracking-wide ${pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"
-                }`}
+              className={`block px-3 py-2 text-sm uppercase tracking-wide ${pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"}`}
             >
               Contato
             </Link>

@@ -1,11 +1,13 @@
-import servicoImg from "@/components/imgs/servicos/servico.png" // importa direto
+// src/data/services.ts
+import type { StaticImageData } from "next/image";
+import servicoImg from "@/components/imgs/servicos/servico.png";
 
 export type Service = {
-  label: string
-  href: string
-  desc: string
-  img: any // pode ser StaticImageData do next/image
-}
+  label: string;
+  href: string;
+  desc: string;
+  img: string | StaticImageData; // ✅ sem any
+};
 
 export const SERVICES: Service[] = [
   {
@@ -26,4 +28,4 @@ export const SERVICES: Service[] = [
     desc: "Fabricação e montagem de estruturas metálicas com laudos e ART.",
     img: servicoImg,
   },
-]
+];

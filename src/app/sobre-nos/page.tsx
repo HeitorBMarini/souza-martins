@@ -26,7 +26,7 @@ export default function SobreNosPage() {
 
       {/* Breadcrumb */}
       <div className="w-full bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40">
           <Breadcrumb>
             <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
               <BreadcrumbItem>
