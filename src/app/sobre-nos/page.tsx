@@ -49,9 +49,9 @@ export default function SobreNosPage() {
           </Breadcrumb>
 
           {/* Título da página com underline */}
-          <h1 className="mt-6 text-3xl font-bold text-[var(--dark-text)] inline-block border-b-2 border-[color:var(--secondary)] pb-1">
+          <h2 className="mt-6 text-3xl font-bold text-[var(--dark-text)] inline-block border-b-2 border-[color:var(--secondary)] pb-1">
             Sobre nós
-          </h1>
+          </h2>
         </div>
       </div>
 
