@@ -1,20 +1,21 @@
+import Header from "@/components/Header";
 import Banner from "@/components/Banner";
-import ButtonFixed from "@/components/ButtonFixed";
+import ServicosHome from "@/components/ServicosHome";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import QuemSomos from "@/components/QuemSomos";
-import ServicosHome from "@/components/ServicosHome";
+import ButtonFixed from "@/components/ButtonFixed";
 
 export default function Home() {
   return (
-    <><Header />
-    <Banner />
-    <QuemSomos/>
-    <ServicosHome/>
-    <Cta/>
-    <ButtonFixed/>
-    <Footer/>
+    <>
+      <Header />
+      <main>
+        <Banner />
+        <ServicosHome />
+        <Cta />
+      </main>
+      <Footer />
+      <ButtonFixed />
     </>
   );
 }
