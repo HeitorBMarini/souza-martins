@@ -13,7 +13,6 @@ export default function Home() {
       <main>
         <Banner/>
         <QuemSomos/>
-        <Banner />
         <ServicosHome />
         <Cta />
       </main>
