@@ -106,7 +106,6 @@ export default function SobreNosPage() {
         </section>
         <Cta />
 
-        <Footer />
       </main>
     </>
   );

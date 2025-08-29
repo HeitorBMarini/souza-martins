@@ -75,7 +75,7 @@ export default function Header() {
         ${scrolled ? "bg-primary/95 backdrop-blur border-b border-white/10 shadow-sm" : "bg-primary sm:bg-transparent"}
       `}
     >
-      <div className="mx-auto max-w-7xl px-4 pt-14 pb-8 sm:pb-7 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:pb-7 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">

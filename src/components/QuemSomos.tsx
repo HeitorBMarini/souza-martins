@@ -9,7 +9,7 @@ import { Button } from "./ui/button";
 
 export default function QuemSomos() {
     return (
-        <div className="mx-auto max-w-7xl px-10 py-14">
+        <div className="mx-auto max-w-7xl px-10 pb-20">
             <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  sm:pt-0">
                 {/* Coluna das imagens */}
                 <div className="flex pt-30  sm:pt-0 gap-1 sm:gap-4">

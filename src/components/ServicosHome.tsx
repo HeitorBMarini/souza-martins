@@ -23,7 +23,7 @@ export default function ServicosHome() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
           {SERVICES.map((s) => (
             <Link key={s.href} href={s.href} className="block">
               <article

@@ -43,7 +43,7 @@ export default function Banner() {
               <Link href="/contato">
                 <Button
                   size="lg"
-                  className="uppercase tracking-wide font-semibold"
+                  className="uppercase tracking-wide font-semibold cursor-pointer"
                 >
                   Solicite um orçamento
                 </Button>
