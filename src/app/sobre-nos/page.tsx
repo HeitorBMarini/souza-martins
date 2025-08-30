@@ -93,15 +93,13 @@ export default function SobreNosPage() {
                 SERRALHERIA E PINTURAS
               </h3>
               <p className="text-zinc-600 leading-relaxed">
-                Lorem ipsum dolor sit amet. Et repellat omnis aut dolor aperiam
-                At quibusdam dolor et enim dolore est explicabo aliquam id culpa
-                eveniet? Est impedit voluptatem cum officia nihil est
-                exercitationem repellendus. Et consectetur impedit qui
-                repellendus suscipit et officiis magnam a dolor repellat aut
-                dicta illum hic itaque minus. Sit ipsam deserunt eum dicta
-                voluptates sed minima minima cum corrupti beatae ut quod sunt ea
-                quod adipisci. Eum aspernatur repellat quo corporis laborum eos
-                libero atque est autem aliquam.
+               A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada  pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a  empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal. 
+              </p>
+               <p className="text-zinc-600 leading-relaxed">
+               Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa. 
+              </p>
+               <p className="text-zinc-600 leading-relaxed">
+               Hoje, a SM Sousa  Martins une tradição e inovação, oferecendo soluções em serralheria com qualidade,  confiança e compromisso.
               </p>
             </div>
           </div>
