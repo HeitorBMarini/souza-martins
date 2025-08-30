@@ -44,8 +44,8 @@ export async function POST(req: NextRequest) {
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    const to = process.env.CONTACT_TO;
-    const from = process.env.CONTACT_FROM;
+    const to = process.env.CONTACT_TO!;
+    const from = process.env.CONTACT_FROM!;
 
     // Se faltar ENV em dev, simula sucesso
     if (!RESEND_API_KEY || !to || !from) {
