@@ -27,7 +27,8 @@ export default function SobreNosPage() {
       {/* Breadcrumb */}
       <div className="w-full bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40">
-          <Breadcrumb>
+          <div className="pt-10 md:pt-0">
+    <Breadcrumb>
             <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -47,6 +48,8 @@ export default function SobreNosPage() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
+          </div>
+      
 
           {/* Título da página com underline */}
           <h2 className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
@@ -106,9 +109,10 @@ export default function SobreNosPage() {
 
 
         </section>
-        <Cta />
 
       </main>
+              <Cta />
+
     </>
   );
 }

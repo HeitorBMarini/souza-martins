@@ -78,29 +78,32 @@ export default function ContatoPage() {
       {/* Breadcrumb */}
       <div className="w-full bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40">
-          <Breadcrumb>
-            <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/" className="flex items-center gap-1">
-                    <HomeIcon size={16} />
-                    Home
-                  </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
+          <div className="pt-10 md:pt-0">
+            <Breadcrumb>
+              <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/" className="flex items-center gap-1">
+                      <HomeIcon size={16} />
+                      Home
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
 
-              <BreadcrumbSeparator>
-                <ChevronRight size={14} className="text-black" />
-              </BreadcrumbSeparator>
+                <BreadcrumbSeparator>
+                  <ChevronRight size={14} className="text-black" />
+                </BreadcrumbSeparator>
 
-              <BreadcrumbItem>
-                <BreadcrumbPage className="font-bold">Contato</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="font-bold">Contato</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+          </div>
+
 
           {/* Título da página com underline */}
-          <h2  className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
+          <h2 className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
              after:content-[''] after:block after:h-[3px] after:w-16 
              after:bg-[var(--primary)] after:mt-2">
             Contato

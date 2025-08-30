@@ -2,13 +2,14 @@
 import { NextRequest } from "next/server";
 import { Resend } from "resend";
 import { EmailTemplate } from "@/components/email-template";
-import { render } from "@react-email/components";
+import { render } from "@react-email/render";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 type ContactPayload = {
   name: string;
-  email: string;
+  email: string;   // <- remover qualquer texto extra aqui
   phone: string;
   source: string;
   message: string;
@@ -20,16 +21,17 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json().catch(async () => {
-      const form = await req.formData();
-      return {
-        name: (form.get("name") || "").toString(),
-        email: (form.get("email") || "").toString(),
-        phone: (form.get("phone") || "").toString(),
-        source: (form.get("source") || "").toString(),
-        message: (form.get("message") || "").toString(),
-      } as Partial<ContactPayload>;
-    });
+    const body =
+      (await req.json().catch(async () => {
+        const form = await req.formData();
+        return {
+          name: (form.get("name") || "").toString(),
+          email: (form.get("email") || "").toString(),
+          phone: (form.get("phone") || "").toString(),
+          source: (form.get("source") || "").toString(),
+          message: (form.get("message") || "").toString(),
+        } as Partial<ContactPayload>;
+      })) || {};
 
     const name = (body.name || "").trim();
     const email = (body.email || "").trim();
@@ -45,30 +47,31 @@ export async function POST(req: NextRequest) {
     const to = process.env.CONTACT_TO;
     const from = process.env.CONTACT_FROM;
 
-    // Fallback: responde sucesso simulado em dev se faltar ENV
+    // Se faltar ENV em dev, simula sucesso
     if (!RESEND_API_KEY || !to || !from) {
       console.warn("[/api/contact] ENV ausente. Simulando envio.", {
-        hasKey: !!RESEND_API_KEY, to, from,
+        hasKey: !!RESEND_API_KEY,
+        to,
+        from,
       });
       return Response.json({ ok: true, simulated: true });
     }
 
     const resend = new Resend(RESEND_API_KEY);
 
-    // 👇 Renderiza o HTML manualmente (evita o erro this.renderAsync)
+    // Gera HTML do template React
     const html = await render(
       EmailTemplate({ name, email, phone, source, message }),
       { pretty: true }
     );
 
     const { data, error } = await resend.emails.send({
-      from,                // "onboarding@resend.dev" (teste) OU domínio verificado
-      to: [to],
-      replyTo: email,
+      from,          // ex.: onboarding@resend.dev (teste) ou domínio verificado
+      to: [to],      // ex.: seu gmail
+      replyTo: email, // <- camelCase
       subject: `Novo contato do site: ${name}`,
-      html,                // 👈 usa html no lugar de "react"
-      // opcionalmente, um texto simples também:
-      // text: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nFonte: ${source}\n\n${message}`
+      html,
+      // text: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nFonte: ${source}\n\n${message}`,
     });
 
     if (error) {

@@ -2,9 +2,16 @@
 
 import { useState, useCallback } from "react";
 import Link from "next/link";
+import type { LucideIcon } from "lucide-react";
 import { ChevronLeft, Wrench, Hammer, Factory } from "lucide-react";
 
-const SERVICES = [
+type ServiceItem = {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+const SERVICES: ServiceItem[] = [
   { label: "Serralheria", href: "/servicos/serralheria", icon: Wrench },
   { label: "Solda", href: "/servicos/solda", icon: Hammer },
   { label: "Estruturas Metálicas", href: "/servicos/estruturas", icon: Factory },
@@ -26,15 +33,15 @@ export default function ServiceRail() {
     >
       {/* Painel que desliza */}
       <aside
+        id="service-rail"
         className={`
           absolute top-1/2 right-0 -translate-y-1/2
           w-[var(--rail-w)] max-h-[80vh]
           rounded-l-xl bg-primary text-white shadow-xl
-          ring-1 ring-black/10 overflow-y-auto overscroll-contain
+          ring-1 ring-black/10 overflow-y-auto
           transition-transform duration-300
           ${open ? "translate-x-0" : "translate-x-full"}
         `}
-        style={{ contain: "layout paint" } as any}
       >
         <header className="px-4 py-3 border-b border-white/10 font-semibold uppercase tracking-wide text-sm">
           Serviços
@@ -54,7 +61,7 @@ export default function ServiceRail() {
         </nav>
       </aside>
 
-      {/* Botão/aba que fica na borda direita */}
+      {/* Aba/botão lateral */}
       <button
         type="button"
         onClick={toggle}
