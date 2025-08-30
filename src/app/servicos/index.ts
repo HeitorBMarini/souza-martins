@@ -1,2 +1,2 @@
-export { default as SoldaSection } from "./SoldaSection";
-
+// app/servicos/index.ts
+export { default as SoldaSection } from "./_sections/SoldaSection";

@@ -20,6 +20,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function ContatoPage() {
   const [loading, setLoading] = useState(false);
@@ -99,7 +100,9 @@ export default function ContatoPage() {
           </Breadcrumb>
 
           {/* Título da página com underline */}
-          <h2 className="mt-6 text-3xl font-bold text-[var(--dark-text)] inline-block border-b-2 border-[color:var(--secondary)] pb-1">
+          <h2  className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
+             after:content-[''] after:block after:h-[3px] after:w-16 
+             after:bg-[var(--primary)] after:mt-2">
             Contato
           </h2>
         </div>
@@ -176,7 +179,7 @@ export default function ContatoPage() {
                     name="phone"
                     type="tel"
                     required
-                    placeholder="(11) 99999-9999"
+                    placeholder="Telefone"
                     className="w-full rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm outline-none focus:border-zinc-300"
                   />
                 </label>
@@ -216,7 +219,7 @@ export default function ContatoPage() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="mt-2 cursor-pointer w-full sm:w-auto rounded-full bg-[var(--secondary)] px-6 py-5 text-xs uppercase tracking-widest hover:bg-[color:var(--primary)] disabled:opacity-70"
+                className="mt-2 cursor-pointer w-full sm:w-full rounded-full bg-[var(--secondary)] px-6 py-5 text-xs uppercase tracking-widest hover:bg-[color:var(--primary)] disabled:opacity-70"
               >
                 {loading ? "Enviando..." : "Enviar mensagem"}
               </Button>
@@ -242,7 +245,7 @@ export default function ContatoPage() {
 
               <li className="flex items-start gap-3">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[var(--secondary)]">
-                  <MessageCircle size={18} />
+                  <FaWhatsapp className="size-4" />
                 </span>
                 <div>
                   <p className="text-sm font-semibold">WhatsApp</p>

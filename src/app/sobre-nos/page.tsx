@@ -49,13 +49,15 @@ export default function SobreNosPage() {
           </Breadcrumb>
 
           {/* Título da página com underline */}
-          <h2 className="mt-6 text-3xl font-bold text-[var(--dark-text)] inline-block border-b-2 border-[color:var(--secondary)] pb-1">
+          <h2 className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
+             after:content-[''] after:block after:h-[3px] after:w-16 
+             after:bg-[var(--primary)] after:mt-2">
             Sobre nós
           </h2>
         </div>
       </div>
 
-      <main className="w-full mx-auto ">
+      <main className="mx-auto max-w-7xl px-10 pb-20">
         <section className="w-full bg-white px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-20 pb-30 items-center">
             {/* Coluna das imagens */}

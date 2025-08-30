@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import logo from "@/components/imgs/logo-souza.png";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -98,7 +99,7 @@ export default function Footer() {
 
               <li className="flex items-center justify-center md:justify-start gap-2 text-zinc-700">
                 <span className="inline-flex size-6 items-center justify-center rounded bg-[color:var(--primary)] text-white">
-                  <MessageSquareText className="size-4" />
+                  <FaWhatsapp className="size-4" />
                 </span>
                 <a
                   href="https://wa.me/5511975981616"

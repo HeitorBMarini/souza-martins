@@ -47,8 +47,8 @@ function NavLink({
       onClick={onClick}
       className={`relative px-3 py-2 text-sm uppercase tracking-wide transition
         ${isActive ? "text-white" : "text-zinc-300 hover:text-white"}
-        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white 
-        after:transition-all after:duration-300 after:content-[''] 
+        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white
+        after:transition-all after:duration-300 after:content-['']
         hover:after:w-full
       `}
     >
@@ -69,6 +69,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // fecha o menu ao trocar de rota
+  useEffect(() => {
+    setOpenMobile(false);
+  }, [pathname]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all
@@ -76,14 +81,14 @@ export default function Header() {
       `}
     >
       <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:pb-7 sm:px-6 lg:px-8">
-        <div className="h-16 flex items-center justify-between">
+        <div className="h-16 flex items-center justify-between relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" aria-label="Ir para a Home">
             <Image src={logo} alt="Souza Martins" priority width={150} height={200} />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center mt-4 gap-2">
+          <nav className="hidden md:flex items-center mt-4 gap-2" role="navigation" aria-label="Principal">
             {MAIN_LINKS.slice(0, 2).map((item) => (
               <NavLink key={item.href} item={item} isActive={pathname === item.href} />
             ))}
@@ -92,20 +97,20 @@ export default function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
+                  type="button"
                   variant="ghost"
                   className={`relative px-3 py-2 text-sm uppercase tracking-wide
                     ${pathname.startsWith("/servicos") ? "text-white" : "text-zinc-300"}
                     hover:text-white hover:bg-transparent
-                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white 
-                    after:transition-all after:duration-300 after:content-[''] 
+                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white
+                    after:transition-all after:duration-300 after:content-['']
                     hover:after:w-full
                   `}
                 >
                   Serviços
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="min-w-56">
-                <DropdownMenuLabel>Serviços</DropdownMenuLabel>
+              <DropdownMenuContent align="end" className="min-w-56 bg-white text-black shadow-lg">
                 <DropdownMenuSeparator />
                 {SERVICES.map((s) => (
                   <DropdownMenuItem key={s.href} asChild>
@@ -118,28 +123,37 @@ export default function Header() {
             <NavLink item={MAIN_LINKS[2]} isActive={pathname === MAIN_LINKS[2].href} />
           </nav>
 
-          {/* Mobile button */}
+          {/* Botão mobile */}
           <button
+            type="button"
             className="md:hidden inline-flex pt-5 sm:pt-0 items-center justify-center rounded-md p-2 text-zinc-300 hover:text-white focus:outline-none"
             onClick={() => setOpenMobile((v) => !v)}
             aria-label="Abrir menu"
             aria-expanded={openMobile}
+            aria-controls="mobile-menu"
           >
             <span className="relative block h-6 w-6">
               <Menu
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${
+                  openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
+                }`}
               />
               <X
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${
+                  openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
+                }`}
               />
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile nav */}
+      {/* Mobile nav (painel abaixo do header) */}
       {openMobile && (
-        <div className="md:hidden border-t border-white/10 bg-primary/95 backdrop-blur">
+        <div
+          id="mobile-menu"
+          className="md:hidden absolute left-0 right-0 top-full bg-primary/95 backdrop-blur z-40 border-t border-white/10 shadow-lg"
+        >
           <div className="px-4 py-3 space-y-1">
             {MAIN_LINKS.slice(0, 2).map((item) => {
               const isActive = pathname === item.href;
@@ -148,7 +162,9 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpenMobile(false)}
-                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${isActive ? "text-white" : "text-zinc-300 hover:text-white"}`}
+                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${
+                    isActive ? "text-white" : "text-zinc-300 hover:text-white"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -156,9 +172,12 @@ export default function Header() {
             })}
 
             {/* Serviços (Dropdown mobile) */}
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
               <DropdownMenuTrigger asChild>
-                <button className="w-full flex items-center justify-between px-3 py-2 text-sm uppercase tracking-wide text-zinc-300 hover:text-white">
+                <button
+                  type="button"
+                  className="w-full flex items-center justify-between px-3 py-2 text-sm uppercase tracking-wide text-zinc-300 hover:text-white"
+                >
                   Serviços
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -190,7 +209,9 @@ export default function Header() {
             <Link
               href="/contato"
               onClick={() => setOpenMobile(false)}
-              className={`block px-3 py-2 text-sm uppercase tracking-wide ${pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"}`}
+              className={`block px-3 py-2 text-sm uppercase tracking-wide ${
+                pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"
+              }`}
             >
               Contato
             </Link>
