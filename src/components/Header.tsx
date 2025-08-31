@@ -12,11 +12,15 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
 import logo from "@/components/imgs/logo-souza.png";
+import { SERVICE_CATEGORIES } from "@/data/services";
 
 type NavItem = { label: string; href: string };
 
@@ -88,40 +92,73 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center mt-4 gap-2" role="navigation" aria-label="Principal">
+          <nav className="hidden md:flex items-center gap-2">
             {MAIN_LINKS.slice(0, 2).map((item) => (
-              <NavLink key={item.href} item={item} isActive={pathname === item.href} />
+              <NavLink
+                key={item.href}
+                item={item}
+                isActive={pathname === item.href}
+              />
             ))}
 
-            {/* Serviços (Dropdown desktop) */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  className={`relative px-3 py-2 text-sm uppercase tracking-wide
-                    ${pathname.startsWith("/servicos") ? "text-white" : "text-zinc-300"}
-                    hover:text-white hover:bg-transparent
-                    after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white
-                    after:transition-all after:duration-300 after:content-['']
-                    hover:after:w-full
-                  `}
-                >
-                  Serviços
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="min-w-56 bg-white text-black shadow-lg">
-                <DropdownMenuSeparator />
-                {SERVICES.map((s) => (
-                  <DropdownMenuItem key={s.href} asChild>
-                    <Link href={s.href}>{s.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* Serviços: link + caret separado para dropdown */}
+            <div className="relative flex items-center">
+              {/* Link que navega para /servicos */}
+              <Link
+                href="/servicos"
+                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
+        ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
+        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
+        ${scrolled ? "after:bg-white" : "after:bg-black"}
+        after:transition-all after:duration-300 after:content-[''] hover:after:w-full
+      `}
+              >
+                Serviços
+              </Link>
 
-            <NavLink item={MAIN_LINKS[2]} isActive={pathname === MAIN_LINKS[2].href} />
+              {/* Caret que abre o submenu */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label="Abrir submenu de serviços"
+                    className={`ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md
+            ${scrolled
+                        ? "text-white hover:bg-white/10"
+                        : "text-zinc-700 hover:bg-zinc-100"}
+            transition`}
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent align="end" className="min-w-60">
+                  <DropdownMenuLabel>Categorias</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  {SERVICE_CATEGORIES.map((cat) => (
+                    <DropdownMenuSub key={cat.category}>
+                      <DropdownMenuSubTrigger>{cat.label}</DropdownMenuSubTrigger>
+                      <DropdownMenuSubContent className="min-w-56">
+                        {cat.children.map((s) => (
+                          <DropdownMenuItem key={s.slug} asChild>
+                            <Link href={`/servicos/${cat.category}/${s.slug}`}>
+                              {s.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuSubContent>
+                    </DropdownMenuSub>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+
+            <NavLink
+              item={MAIN_LINKS[2]}
+              isActive={pathname === MAIN_LINKS[2].href}
+            />
           </nav>
+
 
           {/* Botão mobile */}
           <button
@@ -134,14 +171,12 @@ export default function Header() {
           >
             <span className="relative block h-6 w-6">
               <Menu
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${
-                  openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
-                }`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
+                  }`}
               />
               <X
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${
-                  openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
-                }`}
+                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
+                  }`}
               />
             </span>
           </button>
@@ -162,9 +197,8 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpenMobile(false)}
-                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${
-                    isActive ? "text-white" : "text-zinc-300 hover:text-white"
-                  }`}
+                  className={`block px-3 py-2 text-sm uppercase tracking-wide transition ${isActive ? "text-white" : "text-zinc-300 hover:text-white"
+                    }`}
                 >
                   {item.label}
                 </Link>
@@ -209,9 +243,8 @@ export default function Header() {
             <Link
               href="/contato"
               onClick={() => setOpenMobile(false)}
-              className={`block px-3 py-2 text-sm uppercase tracking-wide ${
-                pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"
-              }`}
+              className={`block px-3 py-2 text-sm uppercase tracking-wide ${pathname === "/contato" ? "text-white" : "text-zinc-300 hover:text-white"
+                }`}
             >
               Contato
             </Link>

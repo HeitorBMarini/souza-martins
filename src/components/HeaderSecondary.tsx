@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { SERVICE_CATEGORIES } from "@/data/services";
 
 import {
   DropdownMenu,
@@ -12,6 +13,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
@@ -99,6 +103,7 @@ export default function HeaderSecondary() {
           </Link>
 
           {/* Desktop nav */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2">
             {MAIN_LINKS.slice(0, 2).map((item) => (
               <NavLink
@@ -109,46 +114,57 @@ export default function HeaderSecondary() {
               />
             ))}
 
-            {/* Serviços: link principal + caret que abre submenu (sem duplicar o link /servicos no menu) */}
-            <div className="flex items-center">
+            {/* Serviços: link + caret separado para dropdown */}
+            <div className="relative flex items-center">
+              {/* Link que navega para /servicos */}
               <Link
                 href="/servicos"
-                className={`px-3 py-2 text-sm uppercase tracking-wide transition font-bold
-      ${scrolled ? "text-white" : isServicos ? "text-black" : "text-zinc-600"}
-      hover:${scrolled ? "text-gray-300" : "text-zinc-500"}
-    `}
+                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
+        ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
+        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
+        ${scrolled ? "after:bg-white" : "after:bg-black"}
+        after:transition-all after:duration-300 after:content-[''] hover:after:w-full
+      `}
               >
                 Serviços
               </Link>
 
+              {/* Caret que abre o submenu */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    aria-label="Abrir submenu de Serviços"
-                    className={`p-2 ml-1 hover:bg-transparent ${scrolled ? "text-white hover:text-gray-300" : "text-black hover:text-zinc-700"
-                      }`}
+                  <button
+                    type="button"
+                    aria-label="Abrir submenu de serviços"
+                    className={`ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md
+            ${scrolled
+                        ? "text-white hover:bg-white/10"
+                        : "text-zinc-700 hover:bg-zinc-100"}
+            transition`}
                   >
                     <ChevronDown className="h-4 w-4" />
-                  </Button>
+                  </button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent
-                  align="end"
-                  sideOffset={6}
-                  // evita overflow horizontal e “pulo” lateral
-                  className={`min-w-56 max-w-[calc(100vw-2rem)] overflow-x-hidden ${scrolled ? "" : "bg-primary text-white"
-                    }`}
-                >
-                  {SERVICES.map((s) => (
-                    <DropdownMenuItem key={s.href} asChild>
-                      <Link href={s.href}>{s.label}</Link>
-                    </DropdownMenuItem>
+                <DropdownMenuContent align="end" className="min-w-60">
+                  <DropdownMenuLabel>Categorias</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  {SERVICE_CATEGORIES.map((cat) => (
+                    <DropdownMenuSub key={cat.category}>
+                      <DropdownMenuSubTrigger>{cat.label}</DropdownMenuSubTrigger>
+                      <DropdownMenuSubContent className="min-w-56">
+                        {cat.children.map((s) => (
+                          <DropdownMenuItem key={s.slug} asChild>
+                            <Link href={`/servicos/${cat.category}/${s.slug}`}>
+                              {s.label}
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuSubContent>
+                    </DropdownMenuSub>
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-
 
             <NavLink
               item={MAIN_LINKS[2]}
@@ -156,6 +172,7 @@ export default function HeaderSecondary() {
               scrolled={scrolled}
             />
           </nav>
+
 
           {/* Mobile button */}
           <button
@@ -193,48 +210,24 @@ export default function HeaderSecondary() {
               })}
 
               {/* Linha de Serviços no mobile: texto leva a /servicos; caret abre a lista */}
-              <div className="rounded-md">
-                <div className="flex items-center justify-between">
-                  <Link
-                    href="/servicos"
-                    onClick={() => setOpenMobile(false)}
-                    className="block flex-1 px-3 py-2 text-sm uppercase tracking-wide text-zinc-200 hover:text-white rounded-md"
-                  >
-                    Serviços
-                  </Link>
-
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <button
-                        aria-label="Abrir submenu de Serviços"
-                        className="px-2 py-2 text-zinc-200 hover:text-white"
+              {SERVICE_CATEGORIES.map(cat => (
+                <div key={cat.category} className="px-3 py-2">
+                  <div className="text-[11px] uppercase tracking-widest text-zinc-400 mb-1">{cat.label}</div>
+                  <div className="space-y-1">
+                    {cat.children.map(s => (
+                      <Link
+                        key={s.slug}
+                        href={`/servicos/${cat.category}/${s.slug}`}
+                        onClick={() => setOpenMobile(false)}
+                        className="block text-sm text-zinc-300 hover:text-white py-1"
                       >
-                        <ChevronDown className="h-4 w-4" />
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                      align="end"
-                      sideOffset={6}
-                      className="w-[calc(100vw-2rem)] mx-2 rounded-md border-0 bg-primary text-white"
-                    >
-                      <DropdownMenuLabel className="px-3 py-2 text-xs uppercase tracking-widest text-zinc-400">
-                        Serviços
-                      </DropdownMenuLabel>
-                      <DropdownMenuSeparator className="bg-zinc-700" />
-                      {SERVICES.map((s) => (
-                        <DropdownMenuItem
-                          key={s.href}
-                          asChild
-                          onClick={() => setOpenMobile(false)}
-                          className="w-full px-3 py-2 uppercase tracking-wide text-sm text-zinc-300 hover:bg-white/10 hover:text-white"
-                        >
-                          <Link href={s.href}>{s.label}</Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ))}
+
 
               <Link
                 href="/contato"
