@@ -9,21 +9,21 @@ import { Button } from "./ui/button";
 
 export default function QuemSomos() {
     return (
-        <div className="mx-auto max-w-7xl px-10 pb-20">
-            <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  sm:pt-0">
+        <div className="mx-auto max-w-7xl px-3  md:px-10 pb-20">
+            <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  md:pt-10">
                 {/* Coluna das imagens */}
-                <div className="flex pt-30  sm:pt-0 gap-1 sm:gap-4">
+                <div className="flex pt-30 md:pt-10   gap-1 sm:gap-4">
                     <Image
                         src={img1}
                         alt="Porta e grade metálica"
-                        className="object-cover "
+                        className="object-cover pt-10 md:pt-0"
                         width={300}
                         height={400}
                     />
                     <Image
                         src={img2}
                         alt="Portão metálico decorado"
-                        className="object-cover relative top-10 sm:top-20 "
+                        className="object-cover relative top-0 md:top-10 pt-10 md:pt-0 "
                         width={300}
                         height={400}
                     />
@@ -43,7 +43,7 @@ export default function QuemSomos() {
                     <p className="text-zinc-600 leading-relaxed">
                     Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa.           </p>
                     <div className="pt-4">
-                        <Link href="/quem-somos">
+                        <Link href="/sobre-nos">
                             <Button
                                 size="lg"
                                 className="uppercase rounded-full text-uppercase cursor-pointer text-white bg-secondary tracking-wide font-semibold hover:bg-primary"

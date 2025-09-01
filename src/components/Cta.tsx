@@ -9,16 +9,19 @@ export default function Cta() {
   return (
     <section className="w-full">
       <div className="relative h-[22rem] md:h-[28rem] overflow-hidden">
-        {/* Imagem como background */}
+        {/* 👉 Imagem de fundo só no desktop */}
         <Image
           src={ctaImg}
           alt="Trabalhador realizando solda"
           priority
           fill
-          className="object-cover object-center"
+          className="hidden md:block object-cover object-center"
         />
 
-        {/* Overlay escuro para contraste (opcional) */}
+        {/* 👉 Fundo sólido no mobile */}
+        <div className="absolute inset-0 bg-primary md:hidden" />
+
+        {/* Overlay escuro no desktop (opcional) */}
         <div className="absolute inset-0" />
 
         {/* Conteúdo */}
@@ -30,7 +33,7 @@ export default function Cta() {
             </h2>
 
             <Link href="/contato" className="mt-6 flex items-start">
-              <Button className="bg-primary text-white px-6 py-3 fw-light uppercase cursor-pointer rounded-md hover:bg-zinc-900/90">
+              <Button className="bg-secondary md:bg-primary text-white px-6 py-3 fw-light uppercase cursor-pointer rounded-md hover:bg-zinc-900/90">
                 Fale Conosco
               </Button>
             </Link>

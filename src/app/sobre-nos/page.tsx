@@ -16,7 +16,6 @@ import { Home as HomeIcon, ChevronRight } from "lucide-react";
 
 import img1 from "@/components/imgs/quem-1.png";
 import img2 from "@/components/imgs/quem-2.png";
-import Footer from "@/components/Footer";
 import Cta from "@/components/Cta";
 
 export default function SobreNosPage() {
@@ -28,28 +27,28 @@ export default function SobreNosPage() {
       <div className="w-full bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-40">
           <div className="pt-10 md:pt-0">
-    <Breadcrumb>
-            <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/" className="flex items-center gap-1">
-                    <HomeIcon size={16} />
-                    Home
-                  </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
+            <Breadcrumb>
+              <BreadcrumbList className="flex items-center gap-2 text-sm text-black">
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link href="/" className="flex items-center gap-1">
+                      <HomeIcon size={16} />
+                      Home
+                    </Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
 
-              <BreadcrumbSeparator>
-                <ChevronRight size={14} className="text-black" />
-              </BreadcrumbSeparator>
+                <BreadcrumbSeparator>
+                  <ChevronRight size={14} className="text-black" />
+                </BreadcrumbSeparator>
 
-              <BreadcrumbItem>
-                <BreadcrumbPage className="font-bold">Sobre nós</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="font-bold">Sobre nós</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
-      
+
 
           {/* Título da página com underline */}
           <h2 className="relative mt-6 text-3xl font-bold text-[var(--dark-text)] pb-1
@@ -60,8 +59,8 @@ export default function SobreNosPage() {
         </div>
       </div>
 
-      <main className="mx-auto max-w-7xl px-10 pb-20">
-        <section className="w-full bg-white px-10">
+      <main className="mx-auto max-w-7xl px-0 md:px-10 pb-20">
+        <section className="w-full bg-white px-2 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-20 pb-30 items-center">
             {/* Coluna das imagens */}
             <div className="flex gap-4">
@@ -93,13 +92,13 @@ export default function SobreNosPage() {
                 SERRALHERIA E PINTURAS
               </h3>
               <p className="text-zinc-600 leading-relaxed">
-               A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada  pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a  empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal. 
+                A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada  pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a  empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal.
               </p>
-               <p className="text-zinc-600 leading-relaxed">
-               Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa. 
+              <p className="text-zinc-600 leading-relaxed">
+                Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa.
               </p>
-               <p className="text-zinc-600 leading-relaxed">
-               Hoje, a SM Sousa  Martins une tradição e inovação, oferecendo soluções em serralheria com qualidade,  confiança e compromisso.
+              <p className="text-zinc-600 leading-relaxed">
+                Hoje, a SM Sousa  Martins une tradição e inovação, oferecendo soluções em serralheria com qualidade,  confiança e compromisso.
               </p>
             </div>
           </div>
@@ -109,7 +108,7 @@ export default function SobreNosPage() {
         </section>
 
       </main>
-              <Cta />
+      <Cta />
 
     </>
   );
