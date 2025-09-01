@@ -9,8 +9,8 @@ export default function ServicosLayout({ children }: { children: ReactNode }) {
     <>
       <HeaderSecondary />
 
-      <div className="w-full bg-white pt-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="w-full bg-white pt-50 md:pt-40">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
           <BreadcrumbClient />
           <TitleClient />   {/* 👈 título/subtítulo dinâmicos */}
         </div>

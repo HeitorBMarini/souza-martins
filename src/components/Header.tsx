@@ -17,10 +17,11 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 
 import logo from "@/components/imgs/logo-souza.png";
 import { SERVICE_CATEGORIES } from "@/data/services";
+
+
 
 type NavItem = { label: string; href: string };
 
@@ -30,40 +31,56 @@ const MAIN_LINKS: NavItem[] = [
   { label: "Contato", href: "/contato" },
 ];
 
-const SERVICES: NavItem[] = [
-  { label: "Serralheria", href: "/servicos/serralheria" },
-  { label: "Solda", href: "/servicos/solda" },
-  { label: "Estruturas Metálicas", href: "/servicos/estruturas" },
-];
-
-function NavLink({
-  item,
-  isActive,
-  onClick,
+/* ---------- Mobile: acordeão por categoria ---------- */
+function MobileCategory({
+  label,
+  category,
+  onNavigate,
 }: {
-  item: NavItem;
-  isActive: boolean;
-  onClick?: () => void;
+  label: string;
+  category: string;
+  onNavigate: () => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const current = SERVICE_CATEGORIES.find((c) => c.category === category);
+  if (!current) return null;
+
   return (
-    <Link
-      href={item.href}
-      onClick={onClick}
-      className={`relative px-3 py-2 text-sm uppercase tracking-wide transition
-        ${isActive ? "text-white" : "text-zinc-300 hover:text-white"}
-        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white
-        after:transition-all after:duration-300 after:content-['']
-        hover:after:w-full
-      `}
-    >
-      {item.label}
-    </Link>
+    <div className="rounded-md">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between px-3 py-2 text-sm uppercase tracking-wide text-zinc-300 hover:text-white"
+        aria-expanded={open}
+        aria-controls={`cat-${category}`}
+      >
+        {label}
+        <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      {open && (
+        <div id={`cat-${category}`} className="pl-3 pb-2">
+          {current.children.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/servicos/${category}/${s.slug}`}
+              onClick={onNavigate}
+              className="block px-3 py-1.5 text-sm text-zinc-300 hover:text-white"
+            >
+              {s.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
-export default function Header() {
+/* ---------- Header ---------- */
+export default function HeaderSecondary() {
   const pathname = usePathname();
   const [openMobile, setOpenMobile] = useState(false);
+  const [openMobileServices, setOpenMobileServices] = useState(false); // << dropdown Serviços mobile
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -73,16 +90,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // fecha o menu ao trocar de rota
+  // fecha menus ao trocar de rota
   useEffect(() => {
     setOpenMobile(false);
+    setOpenMobileServices(false);
   }, [pathname]);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all
-        ${scrolled ? "bg-primary/95 backdrop-blur border-b border-white/10 shadow-sm" : "bg-primary sm:bg-transparent"}
-      `}
+      className={`fixed inset-x-0 top-0 z-[70] transition-all ${scrolled ? "bg-primary/95 backdrop-blur border-b border-white/10 shadow-sm" : "bg-primary sm:bg-transparent"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 sm:pb-7 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between relative">
@@ -94,56 +111,45 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-2">
             {MAIN_LINKS.slice(0, 2).map((item) => (
-              <NavLink
+              <Link
                 key={item.href}
-                item={item}
-                isActive={pathname === item.href}
-              />
+                href={item.href}
+                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition ${pathname === item.href ? "text-white" : "text-white hover:text-secondary"
+                  } after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:w-full`}
+              >
+                {item.label}
+              </Link>
             ))}
 
-            {/* Serviços: link + caret separado para dropdown */}
+            {/* Serviços (desktop): link + dropdown */}
             <div className="relative flex items-center">
-              {/* Link que navega para /servicos */}
               <Link
                 href="/servicos"
-                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
-        ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
-        after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
-        ${scrolled ? "after:bg-white" : "after:bg-black"}
-        after:transition-all after:duration-300 after:content-[''] hover:after:w-full
-      `}
+                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold text-white hover:text-secondary
+                after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:w-full`}
               >
                 Serviços
               </Link>
 
-              {/* Caret que abre o submenu */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button
                     type="button"
                     aria-label="Abrir submenu de serviços"
-                    className={`ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md
-            ${scrolled
-                        ? "text-white hover:bg-white/10"
-                        : "text-zinc-700 hover:bg-zinc-100"}
-            transition`}
+                    className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-white hover:bg-white/10 transition"
                   >
                     <ChevronDown className="h-4 w-4" />
                   </button>
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent align="end" className="min-w-60">
-                  <DropdownMenuLabel>Categorias</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
                   {SERVICE_CATEGORIES.map((cat) => (
                     <DropdownMenuSub key={cat.category}>
                       <DropdownMenuSubTrigger>{cat.label}</DropdownMenuSubTrigger>
                       <DropdownMenuSubContent className="min-w-56">
                         {cat.children.map((s) => (
                           <DropdownMenuItem key={s.slug} asChild>
-                            <Link href={`/servicos/${cat.category}/${s.slug}`}>
-                              {s.label}
-                            </Link>
+                            <Link href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
                           </DropdownMenuItem>
                         ))}
                       </DropdownMenuSubContent>
@@ -153,41 +159,37 @@ export default function Header() {
               </DropdownMenu>
             </div>
 
-            <NavLink
-              item={MAIN_LINKS[2]}
-              isActive={pathname === MAIN_LINKS[2].href}
-            />
+            <Link
+              href={MAIN_LINKS[2].href}
+              className={`relative px-3 py-2 text-sm uppercase tracking-wide transition ${pathname === MAIN_LINKS[2].href ? "text-white" : "text-white hover:text-secondary"
+                } after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:w-full`}
+            >
+              {MAIN_LINKS[2].label}
+            </Link>
           </nav>
-
 
           {/* Botão mobile */}
           <button
             type="button"
-            className="md:hidden inline-flex pt-5 sm:pt-0 items-center justify-center rounded-md p-2 text-zinc-300 hover:text-white focus:outline-none"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white hover:text-secondary focus:outline-none"
             onClick={() => setOpenMobile((v) => !v)}
             aria-label="Abrir menu"
             aria-expanded={openMobile}
             aria-controls="mobile-menu"
           >
             <span className="relative block h-6 w-6">
-              <Menu
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"
-                  }`}
-              />
-              <X
-                className={`absolute inset-0 h-6 w-6 transform transition-all duration-300 ${openMobile ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"
-                  }`}
-              />
+              <Menu className={`absolute inset-0 h-6 w-6 transition-all ${openMobile ? "opacity-0 rotate-90 scale-75" : "opacity-100"} `} />
+              <X className={`absolute inset-0 h-6 w-6 transition-all ${openMobile ? "opacity-100" : "opacity-0 -rotate-90 scale-75"}`} />
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile nav (painel abaixo do header) */}
+      {/* Mobile nav */}
       {openMobile && (
         <div
           id="mobile-menu"
-          className="md:hidden absolute left-0 right-0 top-full bg-primary/95 backdrop-blur z-40 border-t border-white/10 shadow-lg"
+          className="md:hidden absolute left-0 right-0 top-full bg-primary/95 backdrop-blur z-[60] border-t border-white/10 shadow-lg"
         >
           <div className="px-4 py-3 space-y-1">
             {MAIN_LINKS.slice(0, 2).map((item) => {
@@ -204,41 +206,56 @@ export default function Header() {
                 </Link>
               );
             })}
-
-            {/* Serviços (Dropdown mobile) */}
-            <DropdownMenu modal={false}>
-              <DropdownMenuTrigger asChild>
-                <button
-                  type="button"
-                  className="w-full flex items-center justify-between px-3 py-2 text-sm uppercase tracking-wide text-zinc-300 hover:text-white"
-                >
-                  Serviços
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent
-                align="start"
-                sideOffset={4}
-                className="w-[100vw] mx-0 rounded-none border-0 bg-primary text-white"
+            {/* Linha de “Serviços” no mobile */}
+            <div className="flex items-center justify-between px-3 py-2">
+              {/* 👉 TEXTO: sempre leva para /servicos */}
+              <Link
+                href="/servicos"
+                onClick={() => {
+                  setOpenMobile(false);
+                  setOpenMobileServices(false);
+                }}
+                className="text-sm uppercase tracking-wide text-zinc-200 hover:text-white"
               >
-                <DropdownMenuLabel className="px-3 py-2 text-xs uppercase tracking-widest text-zinc-400">
-                  Serviços
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator className="bg-zinc-700" />
+                Serviços
+              </Link>
 
-                {SERVICES.map((s) => (
-                  <DropdownMenuItem
-                    key={s.href}
-                    asChild
-                    onClick={() => setOpenMobile(false)}
-                    className="w-full px-3 py-2 uppercase tracking-wide text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white"
-                  >
-                    <Link href={s.href}>{s.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+              {/* 👉 CARET: só abre/fecha o dropdown */}
+              <button
+                type="button"
+                onClick={() => setOpenMobileServices((v) => !v)}
+                aria-expanded={openMobileServices}
+                aria-controls="mobile-services-panel"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-md text-zinc-200 hover:text-white hover:bg-white/10"
+              >
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${openMobileServices ? "rotate-180" : ""}`}
+                />
+              </button>
+            </div>
+
+
+            {/* Painel rolável de categorias/serviços (mobile) */}
+            {openMobileServices && (
+              <div
+                id="mobile-services-panel"
+                className="mt-1 mx-2 rounded-md border border-white/10 bg-primary/90 max-h-[60vh] overflow-y-auto overscroll-contain"
+              >
+                <div className="px-2 py-2 space-y-1">
+                  {SERVICE_CATEGORIES.map((cat) => (
+                    <MobileCategory
+                      key={cat.category}
+                      label={cat.label}
+                      category={cat.category}
+                      onNavigate={() => {
+                        setOpenMobile(false);
+                        setOpenMobileServices(false);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
             <Link
               href="/contato"
