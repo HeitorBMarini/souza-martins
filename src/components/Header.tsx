@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, ChevronDown, X } from "lucide-react";
 
 import {
@@ -20,6 +20,7 @@ import {
 
 import logo from "@/components/imgs/logo-souza.png";
 import { SERVICE_CATEGORIES } from "@/data/services";
+import React from "react";
 
 
 
@@ -121,43 +122,100 @@ export default function HeaderSecondary() {
               </Link>
             ))}
 
-            {/* Serviços (desktop): link + dropdown */}
-            <div className="relative flex items-center">
-              <Link
-                href="/servicos"
-                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold text-white hover:text-secondary
-                after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 after:content-[''] hover:after:w-full`}
-              >
-                Serviços
-              </Link>
+            {/* Serviços (desktop) — abre no hover e sem scroll lateral */}
+            {(() => {
+              const [open, setOpen] = useState(false);
+              const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    type="button"
-                    aria-label="Abrir submenu de serviços"
-                    className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-white hover:bg-white/10 transition"
+              const openNow = () => {
+                if (closeTimer.current) clearTimeout(closeTimer.current);
+                setOpen(true);
+              };
+              const scheduleClose = (ms = 150) => {
+                if (closeTimer.current) clearTimeout(closeTimer.current);
+                closeTimer.current = setTimeout(() => setOpen(false), ms);
+              };
+
+              return (
+                <div
+                  className="relative flex items-center"
+                  onPointerEnter={openNow}
+                  onPointerLeave={() => scheduleClose(150)}
+                >
+                  {/* Link principal vai para /servicos */}
+                  <Link
+                    href="/servicos"
+                    className="relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold text-white hover:text-secondary
+                   after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white
+                   after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
                   >
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                </DropdownMenuTrigger>
+                    Serviços
+                  </Link>
 
-                <DropdownMenuContent align="end" className="min-w-60">
-                  {SERVICE_CATEGORIES.map((cat) => (
-                    <DropdownMenuSub key={cat.category}>
-                      <DropdownMenuSubTrigger>{cat.label}</DropdownMenuSubTrigger>
-                      <DropdownMenuSubContent className="min-w-56">
-                        {cat.children.map((s) => (
-                          <DropdownMenuItem key={s.slug} asChild>
-                            <Link href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuSubContent>
-                    </DropdownMenuSub>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
+                  <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        type="button"
+                        aria-label="Abrir submenu de serviços"
+                        className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-white hover:bg-white/10 transition"
+                        onPointerEnter={openNow}
+                        onPointerLeave={() => scheduleClose(150)}
+                      >
+                        <ChevronDown className="h-4 w-4" />
+                      </button>
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent
+                      align="center"
+                      sideOffset={10}
+                      collisionPadding={24}
+                      avoidCollisions
+                      className="min-w-64 w-72 overflow-x-hidden"
+                      onPointerEnter={openNow}
+                      onPointerLeave={() => scheduleClose(150)}
+                    >
+                      {SERVICE_CATEGORIES.map((cat) => (
+                        <DropdownMenuSub key={cat.category}>
+                          {/* SubTrigger apenas ABRE o submenu (não é link) */}
+                          <DropdownMenuSubTrigger
+                            onSelect={(e) => e.preventDefault()}
+                            onPointerEnter={openNow}
+                            onPointerLeave={() => scheduleClose(150)}
+                          >
+                            {cat.label}
+                          </DropdownMenuSubTrigger>
+
+                          <DropdownMenuSubContent
+                            sideOffset={8}
+                            collisionPadding={24}
+                            avoidCollisions
+                            className="min-w-64 max-h-[60vh] overflow-y-auto overflow-x-hidden overscroll-contain"
+                            onPointerEnter={openNow}
+                            onPointerLeave={() => scheduleClose(150)}
+                          >
+                            {/* Link direto para a categoria */}
+                            <DropdownMenuItem asChild className="font-medium">
+                              <Link href={`/servicos/${cat.category}`}>Ver {cat.label}</Link>
+                            </DropdownMenuItem>
+
+                            <DropdownMenuSeparator />
+
+                            {/* Serviços da categoria */}
+                            {cat.children.map((s) => (
+                              <DropdownMenuItem key={s.slug} asChild>
+                                <Link href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuSubContent>
+                        </DropdownMenuSub>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              );
+            })()}
+
+
 
             <Link
               href={MAIN_LINKS[2].href}

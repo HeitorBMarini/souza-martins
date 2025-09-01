@@ -125,3 +125,5 @@
     @apply bg-background text-foreground;
   }
 }
+
+html, body { overflow-x: clip; } /* ou hidden se preferir */
