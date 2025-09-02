@@ -90,10 +90,10 @@ export default function Footer() {
                   <Phone className="size-4" />
                 </span>
                 <a
-                  href="tel:+551197598-1616"
+                  href="tel:+5511976159174"
                   className="hover:text-[color:var(--primary)]"
                 >
-                  (11) 97598-1616
+                  (11) 976159174
                 </a>
               </li>
 
@@ -102,12 +102,12 @@ export default function Footer() {
                   <FaWhatsapp className="size-4" />
                 </span>
                 <a
-                  href="https://wa.me/551197598-1616"
+                  href="https://wa.me/5511976159174"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[color:var(--primary)]"
                 >
-                  (11) 97598-1616
+                  (11) 976159174
                 </a>
               </li>
 
