@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { SERVICE_CATEGORIES } from "@/data/services";
 
@@ -110,6 +110,18 @@ function MobileCategory({
 }
 
 export default function HeaderSecondary() {
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openNow = () => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    setServicesOpen(true);
+  };
+  const scheduleClose = (ms = 150) => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = setTimeout(() => setServicesOpen(false), ms);
+  };
+
   const pathname = usePathname();
   const [openMobile, setOpenMobile] = useState(false);
   const [openMobileServices, setOpenMobileServices] = useState(false); // dropdown de serviços no mobile
@@ -152,41 +164,69 @@ export default function HeaderSecondary() {
             ))}
 
             {/* Serviços: link + caret (desktop) */}
-            <div className="relative flex items-center">
+            {/* Serviços: link + caret (desktop) — abre no hover */}
+            <div
+              className="relative flex items-center"
+              onPointerEnter={openNow}
+              onPointerLeave={() => scheduleClose(150)}
+            >
               <Link
                 href="/servicos"
                 className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
-                  ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
-                  ${scrolled ? "after:bg-white" : "after:bg-black"}
-                  after:transition-all after:duration-300 after:content-[''] hover:after:w-full
-                `}
+      ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
+      after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
+      ${scrolled ? "after:bg-white" : "after:bg-black"}
+      after:transition-all after:duration-300 after:content-[''] hover:after:w-full
+    `}
               >
                 Serviços
               </Link>
 
-              <DropdownMenu>
+              <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen} modal={false}>
                 <DropdownMenuTrigger asChild>
                   <button
                     type="button"
                     aria-label="Abrir submenu de serviços"
                     className={`ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md
-                      ${scrolled ? "text-white hover:bg-white/10" : "text-zinc-700 hover:bg-zinc-100"}
-                      transition
-                    `}
+          ${scrolled ? "text-white hover:bg-white/10" : "text-zinc-700 hover:bg-zinc-100"}
+          transition
+        `}
+                    onPointerEnter={openNow}
+                    onPointerLeave={() => scheduleClose(150)}
                   >
                     <ChevronDown className="h-4 w-4" />
                   </button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent align="end" className="min-w-60">
+                <DropdownMenuContent
+                  align="end"
+                  sideOffset={10}
+                  collisionPadding={24}
+                  avoidCollisions
+                  className="z-[90] min-w-60"
+                  onPointerEnter={openNow}
+                  onPointerLeave={() => scheduleClose(150)}
+                >
                   {SERVICE_CATEGORIES.map((cat) => (
                     <DropdownMenuSub key={cat.category}>
-                      <DropdownMenuSubTrigger>{cat.label}</DropdownMenuSubTrigger>
-                      <DropdownMenuSubContent className="min-w-56">
+                      <DropdownMenuSubTrigger
+                        onSelect={(e) => e.preventDefault()}
+                        className="px-4 py-3 text-[14px]"
+                      >
+                        {cat.label}
+                      </DropdownMenuSubTrigger>
+
+                      <DropdownMenuSubContent
+                        sideOffset={8}
+                        collisionPadding={24}
+                        avoidCollisions
+                        className="z-[95] min-w-56 max-h-[60vh] overflow-y-auto overflow-x-hidden overscroll-contain"
+                        onPointerEnter={openNow}
+                        onPointerLeave={() => scheduleClose(150)}
+                      >
                         {cat.children.map((s) => (
-                          <DropdownMenuItem key={s.slug} asChild>
-                            <Link href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
+                          <DropdownMenuItem key={s.slug} asChild className="px-4 py-3 text-[14px]">
+                            <Link className="cursor-pointer" href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
                           </DropdownMenuItem>
                         ))}
                       </DropdownMenuSubContent>
@@ -195,6 +235,7 @@ export default function HeaderSecondary() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
+
 
             <NavLink
               item={MAIN_LINKS[2]}

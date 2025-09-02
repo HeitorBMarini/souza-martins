@@ -30,7 +30,7 @@ export default async function CategoriaPage({
             >
               <article>
                 {s.img ? (
-                  <div className="relative h-44 w-full">
+                  <div className="relative h-70 w-full">
                     <Image src={s.img} alt={s.label} fill className="object-cover" />
                   </div>
                 ) : null}

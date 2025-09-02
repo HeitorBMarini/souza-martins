@@ -10,7 +10,7 @@ export default async function ServiceDetailPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { categoria, slug } = await params; // 👈 obrigatório
+  const { categoria, slug } = await params; 
   const { service } = getService(categoria, slug);
   if (!service) return null;
 

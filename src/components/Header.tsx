@@ -32,7 +32,6 @@ const MAIN_LINKS: NavItem[] = [
   { label: "Contato", href: "/contato" },
 ];
 
-/* ---------- Mobile: acordeão por categoria ---------- */
 function MobileCategory({
   label,
   category,
@@ -170,17 +169,17 @@ export default function HeaderSecondary() {
                       sideOffset={10}
                       collisionPadding={24}
                       avoidCollisions
-                      className="min-w-64 w-72 overflow-x-hidden"
+                      className="z-[90] w-80 min-w-72 text-[12px] p-2 overflow-x-hidden"
                       onPointerEnter={openNow}
                       onPointerLeave={() => scheduleClose(150)}
                     >
                       {SERVICE_CATEGORIES.map((cat) => (
                         <DropdownMenuSub key={cat.category}>
-                          {/* SubTrigger apenas ABRE o submenu (não é link) */}
                           <DropdownMenuSubTrigger
                             onSelect={(e) => e.preventDefault()}
                             onPointerEnter={openNow}
                             onPointerLeave={() => scheduleClose(150)}
+                            className="px-4 py-3 text-[12px]"
                           >
                             {cat.label}
                           </DropdownMenuSubTrigger>
@@ -189,27 +188,27 @@ export default function HeaderSecondary() {
                             sideOffset={8}
                             collisionPadding={24}
                             avoidCollisions
-                            className="min-w-64 max-h-[60vh] overflow-y-auto overflow-x-hidden overscroll-contain"
+                            className="z-[95] w-80 min-w-72 max-h-[60vh] overflow-y-auto overflow-x-hidden overscroll-contain"
                             onPointerEnter={openNow}
                             onPointerLeave={() => scheduleClose(150)}
                           >
-                            {/* Link direto para a categoria */}
-                            <DropdownMenuItem asChild className="font-medium">
-                              <Link href={`/servicos/${cat.category}`}>Ver {cat.label}</Link>
+                            <DropdownMenuItem asChild className="font-medium px-4 py-3 text-[15px]">
+                              <Link href={`/servicos/${cat.category}`}>{cat.label}</Link>
                             </DropdownMenuItem>
 
                             <DropdownMenuSeparator />
 
-                            {/* Serviços da categoria */}
                             {cat.children.map((s) => (
-                              <DropdownMenuItem key={s.slug} asChild>
-                                <Link href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
+                              <DropdownMenuItem key={s.slug} asChild className="px-4 py-3 text-[15px]">
+                                <Link className="cursor-pointer"  href={`/servicos/${cat.category}/${s.slug}`}>{s.label}</Link>
                               </DropdownMenuItem>
                             ))}
                           </DropdownMenuSubContent>
                         </DropdownMenuSub>
                       ))}
                     </DropdownMenuContent>
+
+
                   </DropdownMenu>
                 </div>
               );
@@ -266,7 +265,6 @@ export default function HeaderSecondary() {
             })}
             {/* Linha de “Serviços” no mobile */}
             <div className="flex items-center justify-between px-3 py-2">
-              {/* 👉 TEXTO: sempre leva para /servicos */}
               <Link
                 href="/servicos"
                 onClick={() => {
@@ -278,7 +276,6 @@ export default function HeaderSecondary() {
                 Serviços
               </Link>
 
-              {/* 👉 CARET: só abre/fecha o dropdown */}
               <button
                 type="button"
                 onClick={() => setOpenMobileServices((v) => !v)}
@@ -293,7 +290,6 @@ export default function HeaderSecondary() {
             </div>
 
 
-            {/* Painel rolável de categorias/serviços (mobile) */}
             {openMobileServices && (
               <div
                 id="mobile-services-panel"

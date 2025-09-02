@@ -240,7 +240,7 @@ export default function ContatoPage() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold">Telefone</p>
-                  <Link href="tel:+5511976159174" className="text-sm text-zinc-200 hover:underline">
+                  <Link href="tel:+551197598-1616" className="text-sm text-zinc-200 hover:underline">
                     (11) 97598-1616
                   </Link>
                 </div>
@@ -252,7 +252,7 @@ export default function ContatoPage() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold">WhatsApp</p>
-                  <Link href="https://wa.me/5511976159174" target="_blank" className="text-sm text-zinc-200 hover:underline">
+                  <Link href="https://wa.me/551197598-1616" target="_blank" className="text-sm text-zinc-200 hover:underline">
                     (11) 97598-1616
                   </Link>
                 </div>
