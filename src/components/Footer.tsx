@@ -32,9 +32,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-zinc-600 max-w-xs">
-              Lorem ipsum dolor sit amet consectetur. Egestas gravida sed neque
-              sed proin facilisis egestas. Ornare massa viverra vel nunc purus
-              quis lorem. Enim et auctor.
+             A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal.
             </p>
           </div>
 
