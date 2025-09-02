@@ -3,7 +3,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsappButton() {
-  const phone = "5511975981616"; // coloque o número no formato internacional
+  const phone = "5511976159174"; // coloque o número no formato internacional
   const message = "Olá! Gostaria de mais informações."; // mensagem inicial opcional
   const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
