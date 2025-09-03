@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 type ContactPayload = {
   name: string;
-  email: string;   // <- remover qualquer texto extra aqui
+  email: string;   
   phone: string;
   source: string;
   message: string;
