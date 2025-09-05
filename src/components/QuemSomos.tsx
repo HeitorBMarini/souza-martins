@@ -12,7 +12,7 @@ export default function QuemSomos() {
         <div className="mx-auto max-w-7xl px-3  md:px-10 pb-20">
             <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  md:pt-10">
                 {/* Coluna das imagens */}
-                <div className="flex pt-30 md:pt-10   gap-1 sm:gap-4">
+                <div className="flex pt-40 md:pt-10   gap-1 sm:gap-4">
                     <Image
                         src={img1}
                         alt="Porta e grade metálica"
