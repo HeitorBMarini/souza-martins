@@ -20,12 +20,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import logo from "@/components/imgs/logo-souza.png";
+import { POSTS } from "@/data/blog";
 
 type NavItem = { label: string; href: string };
 
 const MAIN_LINKS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Sobre nós", href: "/sobre-nos" },
+  { label: "Blog", href: "/blog" },
   { label: "Contato", href: "/contato" },
 ];
 
@@ -125,6 +127,8 @@ export default function HeaderSecondary() {
   const pathname = usePathname();
   const [openMobile, setOpenMobile] = useState(false);
   const [openMobileServices, setOpenMobileServices] = useState(false); // dropdown de serviços no mobile
+  const [openMobileBlog, setOpenMobileBlog] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -235,7 +239,44 @@ export default function HeaderSecondary() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
+            {/* BLOG (desktop) */}
+            <div className="relative flex items-center">
+              <Link
+                href="/blog"
+                className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
+      ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
+      after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
+      ${scrolled ? "after:bg-white" : "after:bg-black"}
+      after:transition-all after:duration-300 after:content-[''] hover:after:w-full
+    `}
+              >
+                Blog
+              </Link>
 
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    aria-label="Abrir submenu do blog"
+                    className="ml-1 inline-flex h-8 w-8 items-center justify-center rounded-md text-white hover:bg-white/10 transition"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent align="end" className="min-w-72">
+                  {[...POSTS].sort((a, b) => a.date < b.date ? 1 : -1).slice(0, 6).map(p => (
+                    <DropdownMenuItem key={p.slug} asChild>
+                      <Link href={`/blog/${p.slug}`}>{p.title}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <Link href="/blog">Ver todos os artigos</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
             <NavLink
               item={MAIN_LINKS[2]}
@@ -330,6 +371,42 @@ export default function HeaderSecondary() {
                 </div>
               )}
 
+              {/* Seção Blog (mobile) */}
+              <div className="flex items-center justify-between px-3 py-2">
+                <Link
+                  href="/blog"
+                  onClick={() => setOpenMobile(false)}
+                  className="text-sm uppercase tracking-wide text-zinc-200 hover:text-white"
+                >
+                  Blog
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setOpenMobileBlog((v) => !v)}
+                  aria-expanded={openMobileBlog}
+                  aria-controls="mobile-blog-panel"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-md text-zinc-200 hover:text-white hover:bg-white/10"
+                >
+                  <ChevronDown className={`h-4 w-4 transition-transform ${openMobileBlog ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+
+              {openMobileBlog && (
+                <div id="mobile-blog-panel" className="mt-1 mx-2 rounded-md border border-white/10 bg-primary/90 max-h-[50vh] overflow-y-auto">
+                  <div className="px-2 py-2 space-y-1">
+                    {[...POSTS].sort((a, b) => a.date < b.date ? 1 : -1).map(p => (
+                      <Link
+                        key={p.slug}
+                        href={`/blog/${p.slug}`}
+                        onClick={() => setOpenMobile(false)}
+                        className="block px-3 py-1.5 text-sm text-zinc-300 hover:text-white"
+                      >
+                        {p.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
               <Link
                 href="/contato"
                 onClick={() => setOpenMobile(false)}
