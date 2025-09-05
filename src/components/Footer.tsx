@@ -68,6 +68,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/blog"
+                  className="text-zinc-700 hover:text-[color:var(--primary)] transition"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contato"
                   className="text-zinc-700 hover:text-[color:var(--primary)] transition"
                 >
