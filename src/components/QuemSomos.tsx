@@ -16,21 +16,21 @@ export default function QuemSomos() {
                     <Image
                         src={img1}
                         alt="Porta e grade metálica"
-                        className="object-cover pt-10 md:pt-0"
+                        className="object-cover"
                         width={300}
                         height={400}
                     />
                     <Image
                         src={img2}
                         alt="Portão metálico decorado"
-                        className="object-cover relative top-0 md:top-10 pt-10 md:pt-0 "
+                        className="object-cover relative top-10 sm:top-20"
                         width={300}
                         height={400}
                     />
                 </div>
 
                 {/* Coluna do texto */}
-                <div className="sm:pt-46 pt-2">
+                <div className="sm:pt-46 pt-10">
                     <h4 className="uppercase  w-44 text-center p-2 rounded-full font-medium mb-4 bg-[var(--gradient)]">
                         Sobre nós
                     </h4>
@@ -41,7 +41,7 @@ export default function QuemSomos() {
                     <p className="text-zinc-600 leading-relaxed">
                         A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada  pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a  empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal.                      </p>
                     <p className="text-zinc-600 leading-relaxed">
-                    Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa.           </p>
+                        Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa.           </p>
                     <div className="pt-4">
                         <Link href="/sobre-nos">
                             <Button

@@ -81,7 +81,7 @@ export default function SobreNosPage() {
             </div>
 
             {/* Coluna do texto */}
-            <div>
+            <div className="pt-10 md:pt-0">
               <h4 className="uppercase w-44 text-center p-2 rounded-full font-medium mb-4 bg-[var(--gradient)]">
                 Sobre nós
               </h4>
