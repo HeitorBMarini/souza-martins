@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Souza Martins ",
   description: "Serralheria",
+   icons: {
+    icon: "/favicon.png", // 👈 caminho dentro da pasta public
+  },
 };
 
 export default function RootLayout({
