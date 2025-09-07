@@ -283,7 +283,19 @@ export default function HeaderSecondary() {
               isActive={pathname === MAIN_LINKS[2].href}
               scrolled={scrolled}
             />
+             <Link
+                  href="/contato"
+                 className={`relative px-3 py-2 text-sm uppercase tracking-wide transition font-bold
+      ${scrolled ? "text-white hover:text-gray-300" : "text-zinc-900 hover:text-zinc-600"}
+      after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
+      ${scrolled ? "after:bg-white" : "after:bg-black"}
+      after:transition-all after:duration-300 after:content-[''] hover:after:w-full
+    `}
+                >
+                  Contato
+                </Link>
           </nav>
+          
 
           {/* Mobile button */}
           <button

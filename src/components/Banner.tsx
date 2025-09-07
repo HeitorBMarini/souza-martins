@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 export default function Banner() {
   return (
-    // 👇 hidden sm:block → esconde no mobile (<640px) e mostra no restante
     <section className="relative w-full min-h-[90vh] overflow-hidden hidden sm:block">
       {/* Vídeo de fundo */}
       <video

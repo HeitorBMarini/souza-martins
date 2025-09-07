@@ -10,7 +10,6 @@ export default function BlogRail() {
   const isBlog = pathname.startsWith("/blog");
   const [open, setOpen] = useState(false);
 
-  // fecha o painel quando trocar de rota
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
@@ -23,7 +22,6 @@ export default function BlogRail() {
     []
   );
 
-  /* ----------------------------- DESKTOP (md+) ----------------------------- */
   return (
     <>
       <div

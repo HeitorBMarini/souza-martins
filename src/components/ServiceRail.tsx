@@ -9,11 +9,9 @@ import { SERVICE_CATEGORIES } from "@/data/services";
 export default function ServiceRail() {
   const pathname = usePathname();
 
-  // render só nas rotas de serviços
   const isServicos = pathname.startsWith("/servicos");
   const [open, setOpen] = useState(false);
 
-  // categoria atual pela URL (/servicos/[categoria]/...)
   const currentCategory = useMemo(() => {
     const segs = pathname.split("/").filter(Boolean); // ["servicos", "categoria", "slug?"]
     return segs[1] || "";
@@ -22,7 +20,6 @@ export default function ServiceRail() {
   const toggle = useCallback(() => setOpen((v) => !v), []);
   const close = useCallback(() => setOpen(false), []);
 
-  // estado de acordeão por categoria (abre a atual por padrão)
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const isExpanded = (cat: string) => expanded[cat] ?? (cat === currentCategory);
   const toggleCat = (cat: string) =>
@@ -133,7 +130,6 @@ export default function ServiceRail() {
           items-center justify-center
           transition-all duration-300
         `}
-        // quando aberto, o botão acompanha o drawer ficando colado
         style={{
           right: open ? "280px" : "0px",
         }}

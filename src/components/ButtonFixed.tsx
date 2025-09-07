@@ -17,7 +17,7 @@ export default function ButtonFixed() {
         shadow-lg
         hover:bg-zinc-300 transition
       "
-    >
+>
       <ChevronUp className="size-7" />
     </button>
   );

@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 type ContactPayload = {
   name: string;
-  email: string;   
+  email: string;
   phone: string;
   source: string;
   message: string;
@@ -45,38 +45,36 @@ export async function POST(req: NextRequest) {
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const to = process.env.CONTACT_TO!;
-    const from = process.env.CONTACT_FROM!;
+    const fromAddress = process.env.CONTACT_FROM!; 
 
-    // Se faltar ENV em dev, simula sucesso
-    if (!RESEND_API_KEY || !to || !from) {
+    if (!RESEND_API_KEY || !to || !fromAddress) {
       console.warn("[/api/contact] ENV ausente. Simulando envio.", {
         hasKey: !!RESEND_API_KEY,
         to,
-        from,
+        fromAddress,
       });
       return Response.json({ ok: true, simulated: true });
     }
 
     const resend = new Resend(RESEND_API_KEY);
 
-    // Gera HTML do template React
     const html = await render(
       EmailTemplate({ name, email, phone, source, message }),
       { pretty: true }
     );
 
     const { data, error } = await resend.emails.send({
-      from,          // ex.: onboarding@resend.dev (teste) ou domínio verificado
-      to: [to],      // ex.: seu gmail
-      replyTo: email, // <- camelCase
+      from: `Souza Martins <${fromAddress}>`,
+      to: [to],
       subject: `Novo contato do site: ${name}`,
       html,
-      // text: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nFonte: ${source}\n\n${message}`,
+      // ⬇️ campo correto no SDK do Resend
+      replyTo: email,
     });
 
     if (error) {
       console.error("Resend error:", error);
-      return Response.json({ error: error.message || "Erro Resend" }, { status: 502 });
+      return Response.json({ error: (error as any).message || "Erro Resend" }, { status: 502 });
     }
 
     return Response.json({ ok: true, id: data?.id });
