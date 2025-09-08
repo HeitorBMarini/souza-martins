@@ -59,55 +59,69 @@ export default function SobreNosPage() {
         </div>
       </div>
 
-      <main className="mx-auto max-w-7xl px-0 md:px-10 pb-20">
-        <section className="w-full bg-white px-2 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-20 pb-30 items-center">
+      <main className="mx-auto max-w-7xl px-4 md:px-10 pb-20">
+        <section className="w-full bg-white">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 pt-16 lg:pt-20">
             {/* Coluna das imagens */}
-            <div className="flex gap-4">
-              <Image
-                src={img1}
-                alt="Porta e grade metálica"
-                className="object-cover"
-                width={300}
-                height={400}
-              />
-              <Image
-                src={img2}
-                alt="Portão metálico decorado"
-                className="object-cover relative top-10 sm:top-20"
-                width={300}
-                height={400}
-              />
+            <div className="flex items-start justify-center gap-4 max-w-xl mx-auto lg:mx-0">
+              <div className="w-1/2">
+                <Image
+                  src={img1}
+                  alt="Porta e grade metálica"
+                  className="w-full h-auto  object-cover "
+                  sizes="(max-width: 1024px) 50vw, 300px"
+                  width={300}
+                  height={400}
+                />
+              </div>
+
+              <div className="w-1/2 md:translate-y-6 lg:translate-y-10">
+                <Image
+                  src={img2}
+                  alt="Portão metálico decorado"
+                  className="w-full h-auto  object-cover "
+                  sizes="(max-width: 1024px) 50vw, 300px"
+                  width={300}
+                  height={400}
+                />
+              </div>
             </div>
 
             {/* Coluna do texto */}
-            <div className="pt-10 md:pt-0">
-              <h4 className="uppercase w-44 text-center p-2 rounded-full font-medium mb-4 bg-[var(--gradient)]">
+            <div className="px-2 lg:px-0">
+              <h4 className="uppercase w-fit px-4 py-2 rounded-full font-medium mb-4 bg-[var(--gradient)] text-center">
                 Sobre nós
               </h4>
-              <h2 className="text-5xl font-extrabold text-[var(--dark-text)]">
+
+              <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--dark-text)]">
                 SOUSA MARTINS
               </h2>
-              <h3 className="mt-1 mb-6 text-2xl tracking-wider text-[var(--grey-custom)]">
+
+              <h3 className="mt-1 mb-6 text-xl md:text-2xl tracking-wider text-[var(--grey-custom)]">
                 SERRALHERIA E PINTURAS
               </h3>
-              <p className="text-zinc-600 leading-relaxed">
-                A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria. Fundada  pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência no ofício, a  empresa carrega em sua essência o valor do trabalho bem-feito e a paixão pelo metal.
-              </p>
-              <p className="text-zinc-600 leading-relaxed">
-                Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e  decidiu dar continuidade a essa história, fundando sua própria empresa.
-              </p>
-              <p className="text-zinc-600 leading-relaxed">
-                Hoje, a SM Sousa  Martins une tradição e inovação, oferecendo soluções em serralheria com qualidade,  confiança e compromisso.
-              </p>
+
+              <div className="space-y-4 text-zinc-600 leading-relaxed">
+                <p>
+                  A SM Sousa Martins nasceu da tradição e da experiência no ramo da serralheria.
+                  Fundada pelo Sr. Alencar, um mestre reconhecido por sua dedicação e excelência
+                  no ofício, a empresa carrega em sua essência o valor do trabalho bem-feito e a
+                  paixão pelo metal.
+                </p>
+                <p>
+                  Seguindo os passos do pai, seu filho aprendeu desde cedo os segredos da profissão e
+                  decidiu dar continuidade a essa história, fundando sua própria empresa.
+                </p>
+                <p>
+                  Hoje, a SM Sousa Martins une tradição e inovação, oferecendo soluções em serralheria
+                  com qualidade, confiança e compromisso.
+                </p>
+              </div>
             </div>
           </div>
-
-
-
         </section>
-
       </main>
+
       <Cta />
 
     </>
