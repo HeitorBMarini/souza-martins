@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-// ✅ novas imagens (ajuste a extensão se alguma for .png)
+// ✅ imagens dos primeiros artigos
 import heroEsquadrias  from "@/components/imgs/blog/esquadria-serralheria.png";
 import heroEstruturas  from "@/components/imgs/blog/estrutura-metalica.png";
 import heroPintura     from "@/components/imgs/blog/pintura-industrial.png";
@@ -23,20 +23,7 @@ export const POSTS: Post[] = [
       "Rapidez de obra, alta resistência, versatilidade, sustentabilidade e excelente custo-benefício: entenda por que o aço domina projetos modernos.",
     cover: heroEstruturas,
     date: "2025-01-15",
-    content: `
-<p>Quando falamos em modernização da construção civil, as <strong>estruturas metálicas</strong> vêm ganhando destaque...</p>
-<h3>1. Rapidez na Execução da Obra</h3>
-<p>Peças pré-fabricadas reduzem prazo e custo de mão de obra.</p>
-<h3>2. Alta Resistência e Durabilidade</h3>
-<p>O aço suporta grandes cargas e, com proteção anticorrosiva, dura décadas.</p>
-<h3>3. Versatilidade no Design</h3>
-<p>Permite vãos maiores, projetos arrojados e espaços amplos.</p>
-<h3>4. Sustentabilidade</h3>
-<p>100% reciclável e com baixo resíduo de obra.</p>
-<h3>5. Excelente Custo-Benefício</h3>
-<p>Economia em prazo, manutenção e desperdício ao longo do ciclo de vida.</p>
-<p><em>A SM Serralheria fabrica e instala estruturas sob medida. Fale com a gente!</em></p>
-`,
+    content: `...`,
   },
   {
     slug: "serralheria-e-reforma-estrutural",
@@ -45,23 +32,7 @@ export const POSTS: Post[] = [
       "Quando intervir na estrutura? Como a serralheria reforça vigas, escadas, mezaninos e telhados com soluções sob medida.",
     cover: heroReforma,
     date: "2025-01-10",
-    content: `
-<p>A serralheria é essencial em <strong>reformas estruturais</strong>, garantindo segurança, durabilidade e modernização.</p>
-<h3>O que é reforma estrutural?</h3>
-<ul>
-<li>Reforço de vigas/pilares;</li>
-<li>Troca de coberturas por telhados metálicos;</li>
-<li>Recuperação de escadas, mezaninos e grades;</li>
-<li>Adequação para novas cargas e normas.</li>
-</ul>
-<h3>Quando fazer?</h3>
-<ul>
-<li>Trincas/fissuras, ferrugem avançada;</li>
-<li>Ampliação de carga;</li>
-<li>Infiltração que compromete estrutura.</li>
-</ul>
-<p><em>Na Zona Sul de SP, a SM Sousa Martins atende do reforço ao acabamento.</em></p>
-`,
+    content: `...`,
   },
   {
     slug: "pintura-industrial-protecao-durabilidade",
@@ -70,18 +41,7 @@ export const POSTS: Post[] = [
       "Epóxi, PU, anticorrosiva e eletrostática a pó: onde aplicar e por que contratar um serviço profissional.",
     cover: heroPintura,
     date: "2025-01-07",
-    content: `
-<p>A <strong>pintura industrial</strong> protege contra corrosão, aumenta a durabilidade e valoriza o imóvel.</p>
-<h3>Aplicações</h3>
-<p>Condomínios industriais, construtoras e público final (portões, estruturas, corrimãos e fachadas).</p>
-<h3>Tipos</h3>
-<ul>
-<li>Epóxi (pisos);</li>
-<li>PU (alto brilho e resistência);</li>
-<li>Anticorrosiva (proteção de metais);</li>
-<li>Eletrostática a pó (acabamento uniforme e durável).</li>
-</ul>
-`,
+    content: `...`,
   },
   {
     slug: "esquadrias-e-serralheria",
@@ -90,17 +50,109 @@ export const POSTS: Post[] = [
       "Portas, janelas e fachadas com durabilidade, conforto e estética — e como a serralheria personalizada eleva o projeto.",
     cover: heroEsquadrias,
     date: "2025-01-05",
+    content: `...`,
+  },
+
+  // 🚀 novos artigos SEM imagem
+  {
+    slug: "fabricacao-estruturas-metalicas-sob-medida",
+    title: "Fabricação de Estruturas Metálicas Sob Medida: Vantagens e Aplicações",
+    excerpt:
+      "Descubra como estruturas metálicas sob medida tornam projetos mais seguros, rápidos e econômicos.",
+    date: "2025-01-20",
     content: `
-<p><strong>Esquadrias</strong> (portas, janelas, venezianas, fachadas) aliadas à serralheria sob medida trazem estética, segurança e eficiência.</p>
-<h3>Materiais</h3>
+<p>A <strong>fabricação de estruturas metálicas sob medida</strong> vem ganhando destaque no setor da construção civil e industrial por oferecer soluções personalizadas, resistentes e de alto desempenho.</p>
+
+<h3>Onde utilizar?</h3>
 <ul>
-<li>Alumínio (leve e resistente à corrosão);</li>
-<li>Aço (robusto e seguro);</li>
-<li>Ferro (tradicional e econômico).</li>
+<li>Galpões industriais e comerciais</li>
+<li>Mezaninos metálicos</li>
+<li>Coberturas e telhados</li>
+<li>Passarelas e plataformas</li>
+<li>Silos e armazéns no agronegócio</li>
 </ul>
-<p>Melhoram vedação, conforto térmico/acústico e valorizam o imóvel.</p>
+
+<h3>Principais vantagens</h3>
+<ul>
+<li>Rapidez na execução</li>
+<li>Durabilidade com epóxi ou galvanização</li>
+<li>Flexibilidade total de projeto</li>
+<li>Melhor custo-benefício</li>
+<li>Possibilidade de expansão futura</li>
+</ul>
+
+<h3>Etapas do processo</h3>
+<ol>
+<li>Projeto e cálculo estrutural</li>
+<li>Corte e conformação do metal</li>
+<li>Soldagem e montagem</li>
+<li>Acabamento e proteção</li>
+</ol>
+
+<p><em>Investir em estruturas metálicas sob medida é garantir qualidade, eficiência e segurança. Solicite um orçamento personalizado.</em></p>
 `,
   },
+  {
+    slug: "grades-protecao-guarda-corpos",
+    title: "Grades de Proteção e Guarda-Corpos: Segurança e Funcionalidade",
+    excerpt:
+      "Grades e guarda-corpos metálicos reforçam a segurança em obras, empresas e residências com resistência e design sob medida.",
+    date: "2025-01-18",
+    content: `
+<p>As <strong>grades de proteção</strong> e <strong>guarda-corpos</strong> são estruturas metálicas essenciais para a segurança de pessoas e equipamentos em diversos ambientes.</p>
+
+<h3>Aplicações principais</h3>
+<ul>
+<li>Escadas e mezaninos</li>
+<li>Varandas e sacadas</li>
+<li>Plataformas industriais</li>
+<li>Proteção de máquinas</li>
+<li>Áreas externas e jardins</li>
+</ul>
+
+<h3>Vantagens</h3>
+<ul>
+<li>Segurança reforçada</li>
+<li>Durabilidade</li>
+<li>Personalização sob medida</li>
+<li>Versatilidade (interno e externo)</li>
+<li>Design moderno</li>
+</ul>
+
+<p><em>Precisa de grades ou guarda-corpos metálicos? Fale com nossa equipe e solicite um orçamento personalizado.</em></p>
+`,
+  },
+  {
+    slug: "corrimaos-escadas-metalicas",
+    title: "Corrimãos e Escadas Metálicas: Segurança, Resistência e Design Sob Medida",
+    excerpt:
+      "Escadas e corrimãos metálicos unem resistência, estética e segurança em projetos residenciais, comerciais e industriais.",
+    date: "2025-01-16",
+    content: `
+<p>Os <strong>corrimãos</strong> e <strong>escadas metálicas</strong> são soluções que garantem segurança, durabilidade e estética, valorizando qualquer tipo de projeto.</p>
+
+<h3>Onde utilizar?</h3>
+<ul>
+<li>Residências</li>
+<li>Escritórios e empresas</li>
+<li>Indústrias</li>
+<li>Comércios e shoppings</li>
+<li>Áreas externas</li>
+</ul>
+
+<h3>Benefícios</h3>
+<ul>
+<li>Alta resistência</li>
+<li>Segurança contra quedas</li>
+<li>Durabilidade com epóxi ou galvanização</li>
+<li>Design adaptado ao ambiente</li>
+<li>Instalação prática</li>
+</ul>
+
+<p><em>Invista em escadas e corrimãos metálicos sob medida e garanta modernidade, praticidade e valorização do espaço.</em></p>
+`,
+  },
+
 ];
 
 export function getPost(slug: string) {
