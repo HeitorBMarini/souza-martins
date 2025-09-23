@@ -38,7 +38,7 @@ export default function BlogRail() {
             transition-transform duration-300
             ${open ? "translate-x-0" : "translate-x-full"}`}
         >
-          <header className="px-4 py-3 border-b border-white/10 font-semibold uppercase tracking-wide text-sm">
+          <header className="px-4 py-3 border-b border-white/10 font-semibold uppercase tracking-wide text-sm sticky top-0 bg-primary">
             Blog — últimos artigos
           </header>
 
