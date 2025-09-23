@@ -64,10 +64,10 @@ export const POSTS: Post[] = [
   <p><strong>Fabricação de Estruturas Metálicas Sob Medida: Vantagens e Aplicações</strong></p>
 
   <p>Descubra as vantagens da fabricação de estruturas metálicas sob medida e como essa solução pode tornar seu projeto mais seguro, rápido e econômico.</p>
-
+<br>
   <h2>Por que investir em Estruturas Metálicas Sob Medida?</h2>
   <p>A fabricação de estruturas metálicas sob medida vem ganhando destaque no setor da construção civil e industrial por oferecer soluções personalizadas, resistentes e de alto desempenho. Diferente das opções padronizadas, o projeto sob encomenda garante que cada detalhe seja adaptado às necessidades específicas do cliente, aumentando a eficiência e reduzindo custos com desperdícios.</p>
-
+<br>
   <h3>Onde utilizar Estruturas Metálicas Personalizadas?</h3>
   <ul>
     <li>Galpões industriais e comerciais</li>
@@ -76,7 +76,7 @@ export const POSTS: Post[] = [
     <li>Passarelas e plataformas com alta segurança</li>
     <li>Projetos para o agronegócio, como silos e armazéns</li>
   </ul>
-
+<br>
   <h3>Vantagens da Fabricação Sob Medida</h3>
   <ul>
     <li><strong>Rapidez na execução:</strong> montagem simplificada e menor tempo de obra.</li>
@@ -85,7 +85,7 @@ export const POSTS: Post[] = [
     <li><strong>Custo-benefício:</strong> redução de retrabalhos e menor manutenção.</li>
     <li><strong>Expansão futura:</strong> possibilidade de ampliar a estrutura conforme o crescimento do negócio.</li>
   </ul>
-
+<br>
   <h3>Etapas do Processo de Fabricação</h3>
   <ul>
     <li>Projeto e cálculo estrutural – análise técnica e definição do tipo de aço.</li>
@@ -93,6 +93,7 @@ export const POSTS: Post[] = [
     <li>Soldagem e montagem – união de peças com máxima resistência.</li>
     <li>Acabamento e proteção – pintura ou galvanização para evitar corrosão.</li>
   </ul>
+  <br>
 
   <h3>Conclusão</h3>
   <p>Investir em uma estrutura metálica sob medida é garantir qualidade, eficiência e segurança em qualquer projeto. Seja para galpões, indústrias, comércios ou agronegócio, essa solução oferece praticidade e excelente retorno sobre o investimento.</p>
@@ -111,10 +112,10 @@ export const POSTS: Post[] = [
   <p><strong>Grades de Proteção e Guarda-Corpos: Segurança e Funcionalidade em Estruturas Metálicas</strong></p>
 
   <p>Saiba como grades de proteção e guarda-corpos metálicos aumentam a segurança em obras e indústrias, com resistência, durabilidade e design sob medida.</p>
-
+<br>
   <h2>O que são Grades de Proteção e Guarda-Corpos?</h2>
   <p>As grades de proteção e guarda-corpos são estruturas metálicas desenvolvidas para garantir a segurança de pessoas e equipamentos em diferentes ambientes. Com fabricação sob medida, podem ser aplicadas em áreas industriais, comerciais e residenciais, oferecendo resistência, durabilidade e funcionalidade sem abrir mão do design.</p>
-
+<br>
   <h3>Onde Utilizar Grades de Proteção e Guarda-Corpos?</h3>
   <ul>
     <li>Escadas e mezaninos metálicos</li>
@@ -123,7 +124,7 @@ export const POSTS: Post[] = [
     <li>Máquinas e equipamentos (proteção perimetral)</li>
     <li>Áreas externas como jardins e espaços de lazer</li>
   </ul>
-
+<br>
   <h3>Vantagens das Grades de Proteção e Guarda-Corpos Metálicos</h3>
   <ul>
     <li><strong>Segurança reforçada:</strong> proteção contra acidentes e quedas.</li>
@@ -132,7 +133,7 @@ export const POSTS: Post[] = [
     <li><strong>Versatilidade:</strong> aplicáveis em ambientes internos e externos.</li>
     <li><strong>Estética:</strong> possibilidade de acabamento moderno, com pintura epóxi ou galvanização.</li>
   </ul>
-
+<br>
   <h3>Como é Feita a Fabricação?</h3>
   <ul>
     <li><strong>Levantamento do projeto:</strong> análise do local e definição das medidas exatas.</li>
@@ -140,7 +141,7 @@ export const POSTS: Post[] = [
     <li><strong>Soldagem e montagem:</strong> união de elementos com máxima resistência.</li>
     <li><strong>Acabamento final:</strong> pintura ou galvanização para maior durabilidade.</li>
   </ul>
-
+<br>
   <h3>Conclusão</h3>
   <p>As grades de proteção e guarda-corpos metálicos são indispensáveis para aumentar a segurança em obras, empresas e residências. Com fabricação sob medida, oferecem soluções eficientes, duráveis e adaptadas às necessidades de cada cliente.</p>
 
@@ -157,11 +158,11 @@ export const POSTS: Post[] = [
   <p><strong>Corrimãos e Escadas Metálicas: Segurança, Resistência e Design Sob Medida</strong></p>
 
   <p>Descubra as vantagens dos corrimãos e escadas metálicas sob medida. Soluções seguras, resistentes e personalizadas para obras industriais e residenciais.</p>
-
+<br>
   <h2>A Importância dos Corrimãos e Escadas Metálicas</h2>
   <p>Os corrimãos e escadas metálicas são soluções que unem segurança, durabilidade e estética em um único projeto. Com fabricação sob medida, atendem desde residências até grandes empreendimentos comerciais e industriais, garantindo resistência estrutural e acabamento de qualidade.</p>
   <p>Além da função prática, essas estruturas agregam valor estético, permitindo projetos modernos, funcionais e adaptados ao espaço disponível.</p>
-
+<br>
   <h3>Onde Utilizar Escadas e Corrimãos Metálicos?</h3>
   <ul>
     <li>Residências – escadas internas e externas com design moderno</li>
@@ -170,6 +171,7 @@ export const POSTS: Post[] = [
     <li>Comércios e shoppings – soluções duráveis que suportam grande fluxo de pessoas</li>
     <li>Áreas externas – resistentes às intempéries, ideais para jardins, varandas e acessos</li>
   </ul>
+  <br>
 
   <h3>Vantagens das Escadas e Corrimãos Metálicos Sob Medida</h3>
   <ul>
@@ -179,7 +181,7 @@ export const POSTS: Post[] = [
     <li><strong>Design personalizado:</strong> adapta-se ao estilo do ambiente, moderno ou clássico.</li>
     <li><strong>Instalação prática:</strong> montagem rápida e eficiente.</li>
   </ul>
-
+<br>
   <h3>Processo de Fabricação</h3>
   <ul>
     <li><strong>Projeto e dimensionamento:</strong> definição das medidas e cálculos estruturais.</li>
@@ -187,7 +189,7 @@ export const POSTS: Post[] = [
     <li><strong>Soldagem e montagem:</strong> estrutura robusta e estável.</li>
     <li><strong>Acabamento final:</strong> pintura ou galvanização para proteção e estética.</li>
   </ul>
-
+<br>
   <h3>Conclusão</h3>
   <p>Investir em corrimãos e escadas metálicas sob medida é optar por uma solução segura, moderna e durável, que se adapta a qualquer tipo de projeto. Seja em residências, indústrias ou comércios, essas estruturas oferecem praticidade e valorizam o espaço.</p>
 
