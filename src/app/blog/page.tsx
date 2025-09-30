@@ -6,14 +6,19 @@ import { POSTS } from "@/data/blog";
 export const metadata = { title: "Blog | Souza Martins" };
 
 export default function BlogPage() {
-  const list = [...POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const list = [...POSTS].sort((a, b) => {
+    // Se um não tiver cover e o outro tiver, joga o sem cover primeiro
+    if (!a.cover && b.cover) return -1;
+    if (a.cover && !b.cover) return 1;
+
+    // Se ambos forem iguais quanto ao cover, ordena por data (mais recente primeiro)
+    return a.date < b.date ? 1 : -1;
+  });
 
   return (
     <>
       <HeaderSecondary />
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-3xl font-bold text-[var(--dark-text)] mb-6">Blog</h1>
-
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => (
             <Link

@@ -10,7 +10,7 @@ export default async function ServiceDetailPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { categoria, slug } = await params; 
+  const { categoria, slug } = await params;
   const { service } = getService(categoria, slug);
   if (!service) return null;
 
@@ -33,8 +33,12 @@ export default async function ServiceDetailPage({
         <h2 className="text-xl font-semibold text-[var(--dark-text)]">
           Como funciona
         </h2>
-        {/* 👉 Aqui chamamos a descrição do serviço */}
-        <p className="text-zinc-700">{service.desc}</p>
+
+        {/* 👉 Renderiza HTML do desc (suporta <br />, <strong>, listas etc.) */}
+        <div
+          className="text-zinc-700 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: service.desc }}
+        />
 
         <div className="pt-2">
           <Button
@@ -63,7 +67,7 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }) {
-  const { categoria, slug } = await params; // 👈 obrigatório
+  const { categoria, slug } = await params;
   const { cat, service } = getService(categoria, slug);
   return { title: service ? `${service.label} | ${cat?.label}` : "Serviços" };
 }
