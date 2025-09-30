@@ -78,8 +78,9 @@ export const POSTS: Post[] = [
   date: "2025-01-25",
   content: `
 <p>A <strong>fabricação de estruturas metálicas em SP</strong> é uma solução cada vez mais procurada por empresas da construção civil, indústrias e clientes que buscam <strong>resistência, rapidez e custo-benefício</strong> em seus projetos.</p>
-
+<br>
 <p>Na <strong>Serralheria SM</strong>, oferecemos serviços especializados em estruturas metálicas sob medida, garantindo <strong>segurança, durabilidade e acabamento impecável</strong>.</p>
+<br>
 
 <h3>Por que escolher estruturas metálicas em São Paulo?</h3>
 <ul>
@@ -88,9 +89,11 @@ export const POSTS: Post[] = [
   <li><strong>Durabilidade:</strong> resistentes a intempéries, quando bem projetadas e tratadas;</li>
   <li><strong>Custo-benefício:</strong> reduz gastos com mão de obra e manutenção ao longo prazo.</li>
 </ul>
+<br>
 
 <h3>Fabricação sob medida</h3>
 <p>Trabalhamos com <strong>projetos personalizados</strong>, desenvolvidos conforme a necessidade de cada cliente. Utilizamos matérias-primas de alta qualidade e técnicas modernas de soldagem e montagem, entregando soluções completas para obras de pequeno, médio e grande porte.</p>
+<br>
 
 <h3>Principais serviços</h3>
 <ul>
@@ -100,12 +103,15 @@ export const POSTS: Post[] = [
   <li>Coberturas metálicas;</li>
   <li>Projetos sob medida para empresas e residências.</li>
 </ul>
+<br>
 
 <h3>Atendimento em toda a Grande São Paulo</h3>
 <p>Estamos localizados na capital e atendemos toda a região metropolitana, incluindo <strong>Osasco, Guarulhos, Santo André, São Bernardo do Campo, Diadema, Barueri, Carapicuíba, Taboão da Serra</strong> e cidades próximas.</p>
+<br>
 
 <h3>Conclusão</h3>
 <p>Se você procura <strong>fabricação de estruturas metálicas em SP</strong> com qualidade, confiança e entrega no prazo, a <strong>Serralheria SM</strong> é a parceira ideal para o seu projeto.</p>
+<br>
 
 <p><em>Entre em contato agora mesmo e solicite um orçamento sem compromisso para sua estrutura metálica sob medida.</em></p>
 `,
@@ -216,8 +222,10 @@ export const POSTS: Post[] = [
       cover: heroReformaProtoes,
   content: `
 <p>Os portões são essenciais para segurança, privacidade e valorização da fachada. Com o tempo, é natural surgirem desgastes como <strong>ferrugem</strong>, <strong>pintura descascada</strong>, <strong>motor com falhas</strong>, <strong>dobradiças empenadas</strong> e até <strong>trincas</strong>.</p>
+<br>
 
 <p>Em bairros da Zona Sul de São Paulo — <em>Santo Amaro, Moema, Campo Belo, Jabaquara, Saúde, Ipiranga, Morumbi, Panamby</em> — a demanda por <strong>reforma de portões</strong> tem crescido. Vale a pena recuperar em vez de trocar? Na maioria das vezes, <strong>sim</strong>.</p>
+<br>
 
 <h3>Problemas mais comuns</h3>
 <ul>
@@ -227,6 +235,7 @@ export const POSTS: Post[] = [
   <li>Motores antigos ou sem manutenção (perda de potência/falhas);</li>
   <li>Soldas enfraquecidas e empeno/desalinhamento estrutural.</li>
 </ul>
+<br>
 
 <p>Esses pontos raramente exigem troca total. Uma boa reforma devolve <strong>funcionalidade</strong> e <strong>aparência</strong> de “quase novo”.</p>
 
@@ -238,6 +247,7 @@ export const POSTS: Post[] = [
   <li><strong>Rapidez:</strong> obra limpa, sem quebra-quebra na alvenaria;</li>
   <li><strong>Valorização:</strong> acabamento premium eleva a fachada.</li>
 </ul>
+<br>
 
 <h3>Serviços mais procurados na Zona Sul</h3>
 <ol>
@@ -247,6 +257,7 @@ export const POSTS: Post[] = [
   <li><strong>Pintura especial</strong> (automotiva/eletrostática) ou <strong>galvanização</strong> (barreira anticorrosiva);</li>
   <li><strong>Reforma estética completa</strong> (lixamento, pintura premium, acessórios).</li>
 </ol>
+<br>
 
 <h3>Exemplos por bairro</h3>
 <ul>
@@ -255,9 +266,11 @@ export const POSTS: Post[] = [
   <li><strong>Jabaquara / Saúde:</strong> manutenção corretiva em portões antigos;</li>
   <li><strong>Morumbi / Panamby / Vila Andrade:</strong> personalização com serralheria artística e pintura premium.</li>
 </ul>
+<br>
 
 <h3>Conclusão</h3>
 <p>Reformar costuma ser a opção mais inteligente: <strong>economiza</strong>, <strong>moderniza</strong> e <strong>prolonga</strong> a vida útil. Antes de comprar um portão novo, consulte especialistas — muitas vezes, reparos e um bom acabamento já resolvem.</p>
+<br>
 
 <p><em>Quer saber quanto custaria reformar seu portão na Zona Sul de SP? Solicite um orçamento personalizado agora mesmo.</em></p>
 `,
@@ -270,9 +283,11 @@ export const POSTS: Post[] = [
   date: "2025-01-24",
   content: `
 <p>Um portão é muito mais do que uma entrada: é a <strong>primeira barreira de segurança</strong>, protege veículos, garante privacidade e compõe a fachada. Na Zona Sul de São Paulo, onde condomínios, residências e empresas utilizam portões intensivamente, a <strong>manutenção preventiva</strong> se tornou fundamental.</p>
+<br>
 
 <h3>O que é manutenção preventiva?</h3>
 <p>São ações periódicas para evitar falhas. Diferente da corretiva (quando o problema já aconteceu), a preventiva garante funcionamento contínuo e seguro — como uma revisão de carro antes da pane.</p>
+<br>
 
 <h3>Benefícios principais</h3>
 <ul>
@@ -282,6 +297,7 @@ export const POSTS: Post[] = [
   <li><strong>Segurança:</strong> evita falhas que podem expor moradores e empresas;</li>
   <li><strong>Valorização:</strong> transmite cuidado e aumenta valor de revenda.</li>
 </ul>
+<br>
 
 <h3>Itens que precisam de revisão</h3>
 <ol>
@@ -291,12 +307,14 @@ export const POSTS: Post[] = [
   <li><strong>Estrutura metálica:</strong> inspeção de ferrugem, soldagem, pintura protetiva;</li>
   <li><strong>Sistema elétrico e controles:</strong> fiação, sensores e programação.</li>
 </ol>
+<br>
 
 <h3>Preventiva x corretiva</h3>
 <ul>
   <li><strong>Preventiva:</strong> programada a cada 6–12 meses, evita falhas;</li>
   <li><strong>Corretiva:</strong> ocorre após quebra — custa de 2 a 3 vezes mais.</li>
 </ul>
+<br>
 
 <h3>Exemplos práticos</h3>
 <ul>
@@ -304,6 +322,7 @@ export const POSTS: Post[] = [
   <li><strong>Ipiranga:</strong> portão com rangidos resolvido em horas, sem troca;</li>
   <li><strong>Santo Amaro:</strong> empresa evitou prejuízo caro ao revisar engrenagens.</li>
 </ul>
+<br>
 
 <h3>Periodicidade recomendada</h3>
 <ul>
@@ -312,6 +331,7 @@ export const POSTS: Post[] = [
   <li>Empresas/galpões: a cada 3 meses;</li>
   <li>Áreas úmidas ou poluídas: intervalos mais curtos.</li>
 </ul>
+<br>
 
 <h3>Perguntas frequentes</h3>
 <ol>
@@ -321,6 +341,7 @@ export const POSTS: Post[] = [
   <li><strong>Quando reformar?</strong> Apenas se a estrutura estiver comprometida.</li>
   <li><strong>Há contratos de manutenção?</strong> Sim, para residências, condomínios e empresas.</li>
 </ol>
+<br>
 
 <h3>Conclusão</h3>
 <p>A <strong>manutenção preventiva</strong> de portões na Zona Sul de SP é um investimento que se paga rapidamente. Evita dores de cabeça, garante segurança e prolonga a vida útil. Em vez de esperar quebrar, programe revisões periódicas com especialistas.</p>
@@ -374,8 +395,11 @@ export const POSTS: Post[] = [
   cover: heroGrade, 
   content: `
 <p>As <strong>grades de proteção</strong> e os <strong>guarda-corpos</strong> são fundamentais para garantir segurança em casas, apartamentos, condomínios e empresas. Além de prevenir quedas e acidentes, também agregam valor estético, trazendo sofisticação ao imóvel.</p>
+<br>
 
 <h3>Onde encontrar grades e guarda-corpos na Zona Sul de SP</h3>
+<br>
+
 <p>A região da Zona Sul de São Paulo concentra grande demanda por instalação de grades e guarda-corpos de alta qualidade. Alguns exemplos:</p>
 <ul>
   <li><strong>Morumbi:</strong> guarda-corpos de vidro com inox para apartamentos de alto padrão;</li>
@@ -384,6 +408,7 @@ export const POSTS: Post[] = [
   <li><strong>Santo Amaro, Saúde e Jabaquara:</strong> soluções práticas e econômicas;</li>
   <li><strong>Brooklin:</strong> guarda-corpos sofisticados para sacadas e varandas.</li>
 </ul>
+<br>
 
 <h3>Tipos mais usados</h3>
 <ul>
@@ -391,6 +416,7 @@ export const POSTS: Post[] = [
   <li><strong>Guarda-corpos de vidro com inox:</strong> combinam segurança e elegância, muito usados em alto padrão;</li>
   <li><strong>Grades de alumínio:</strong> leves, modernas e de baixa manutenção, perfeitas para áreas externas.</li>
 </ul>
+<br>
 
 <h3>Benefícios de instalar grades e guarda-corpos</h3>
 <ul>
@@ -399,6 +425,7 @@ export const POSTS: Post[] = [
   <li><strong>Estética:</strong> opções modernas que valorizam o imóvel;</li>
   <li><strong>Personalização:</strong> projetos sob medida para cada ambiente.</li>
 </ul>
+<br>
 
 <h3>Dúvidas Frequentes (FAQ)</h3>
 <ol>
@@ -407,6 +434,7 @@ export const POSTS: Post[] = [
   <li><strong>Atendem às normas de segurança?</strong> — Sim, todas as instalações seguem as normas da ABNT.</li>
   <li><strong>Onde encontro instalação na Zona Sul?</strong> — Nossa equipe atende <strong>Morumbi, Campo Belo, Moema, Vila Mariana, Santo Amaro, Jabaquara, Saúde, Chácara Santo Antônio e Brooklin</strong>, com orçamento sob medida.</li>
 </ol>
+<br>
 
 <p><em>Entre em contato agora mesmo e solicite um orçamento sem compromisso para grades e guarda-corpos sob medida na Zona Sul de SP.</em></p>
 `,

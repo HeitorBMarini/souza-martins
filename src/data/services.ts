@@ -48,7 +48,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         label: "Fabricação de Estruturas Metálicas Sob Medida",
         desc: `Desenvolvimento de estruturas conforme a necessidade do cliente, como suportes, reforços, armações e soluções personalizadas em metal.<br /><br />
 Na SM Souza Martins, produzimos estruturas metálicas totalmente personalizadas para atender às necessidades específicas de cada cliente. Seja para suportes, armações, reforços ou soluções especiais em metal, desenvolvemos cada peça com atenção aos detalhes, precisão e qualidade.<br /><br />
-<strong>Como funciona:</strong><br />
+<br />
 - Você nos passa o projeto ou a ideia do que precisa: formato, dimensões, função e estilo.<br />
 - Avaliamos o tipo de material metálico ideal para o uso (resistência, acabamento, durabilidade).<br />
 - Produzimos em nossa oficina com técnicas de solda, corte e montagem de alta qualidade.<br />
