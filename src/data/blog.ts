@@ -7,8 +7,16 @@ import heroPintura     from "@/components/imgs/blog/pintura-industrial.png";
 import heroReforma     from "@/components/imgs/blog/serralheria-reforma.png";
 import heroGrade     from "@/components/imgs/blog/grade-guarda-copo.jpg";
 import heroReformaProtoes     from "@/components/imgs/blog/reforma-portoes.jpg";
-
-
+import heroPortoesAutomaticos     from "@/components/imgs/blog/portoes-automaticos-sp.png";
+import heroGradesSeguranca     from "@/components/imgs/blog/grade-seguranca-sp.png";
+import heroCorrimoesGuardaCorpos     from "@/components/imgs/blog/corrimao-guarda-corpo-sp.png";
+import heroEstruturasMetalicas   from "@/components/imgs/blog/estruturas-metalicas-sp.png"; 
+import heroPortasFerro   from "@/components/imgs/blog/portas-ferro-sp.png";
+import heroJanelasFerro   from "@/components/imgs/blog/janelas-ferro-sp.png";
+import heroCoberturasMetalicas   from "@/components/imgs/blog/coberturas-metalicas-sp.png";
+import heroEscadasMetalicas  from "@/components/imgs/blog/escadas-metalicas-sp.png";
+import heroSerralheriaIndustrial  from "@/components/imgs/blog/serralheria-industrial-sp.png";
+import heroManutencaoSerralheria from "@/components/imgs/blog/manutencao-serralheria-sp.png";
 
 export type Post = {
   slug: string;
@@ -439,8 +447,363 @@ export const POSTS: Post[] = [
 <p><em>Entre em contato agora mesmo e solicite um orçamento sem compromisso para grades e guarda-corpos sob medida na Zona Sul de SP.</em></p>
 `,
 },
+{
+  slug: "portoes-automaticos-em-sao-paulo",
+  title: "Portões Automáticos em São Paulo: Segurança e Comodidade para Seu Imóvel",
+  excerpt:
+    "Modernize seu imóvel com portões automáticos em São Paulo — segurança, praticidade e valorização com tecnologia de ponta.",
+  cover: heroPortoesAutomaticos, // ajuste o nome da imagem se necessário
+  date: "2025-01-20",
+  content: `
+<h2>Automação Residencial</h2>
 
+<p>A instalação de <strong>portões automáticos em São Paulo</strong> tem se tornado cada vez mais comum, tanto em residências quanto em empresas. Este sistema oferece uma combinação perfeita de segurança, praticidade e valorização do imóvel.</p>
+<br>
+<h3>Por que escolher portões automáticos?</h3>
+<p>Os portões automáticos representam um investimento inteligente para quem busca modernizar sua propriedade. Em uma metrópole como São Paulo, onde a segurança é prioridade, esse sistema garante controle total de acesso sem precisar sair do veículo — especialmente importante durante chuvas ou à noite.</p>
+<br>
+<h3>Tipos de portões automáticos disponíveis</h3>
+<p>Existem diversos modelos no mercado, desde portões de correr até basculantes e pivotantes. Cada tipo atende necessidades específicas, considerando espaço disponível, estilo arquitetônico e orçamento. Nossa equipe em São Paulo está preparada para avaliar seu imóvel e recomendar a melhor opção.</p>
+<br>
+<h3>Tecnologia e segurança integradas</h3>
+<p>Os sistemas modernos incluem sensores de segurança, controle remoto com criptografia, abertura por aplicativo e até mesmo integração com sistemas de câmeras. A manutenção preventiva garante funcionamento perfeito por anos.</p>
+<br>
+<h3>Instalação profissional em São Paulo</h3>
+<p>Nossa empresa atende toda a região metropolitana de São Paulo com equipes especializadas. Realizamos desde o projeto inicial até a instalação completa, com garantia total do serviço. Utilizamos apenas materiais de primeira qualidade e motores das melhores marcas do mercado.</p>
+<br>
+<h3>Valorização do seu imóvel</h3>
+<p>Além da segurança e praticidade, os portões automáticos agregam valor significativo ao seu imóvel. Em São Paulo, propriedades com automação completa têm maior valorização no mercado imobiliário.</p>
+<br>
+<p><em>Invista na segurança e comodidade da sua família ou empresa com nossos serviços especializados de portões automáticos em São Paulo.</em></p>
+`,
+},
 
+{
+  slug: "grades-de-seguranca-em-sao-paulo",
+  title: "Grades de Segurança em São Paulo: Proteção Essencial para Residências e Comércios",
+  excerpt:
+    "Descubra como as grades de segurança em São Paulo protegem seu imóvel com design moderno, materiais resistentes e instalação especializada.",
+  cover: heroGradesSeguranca,
+  date: "2025-01-22",
+  content: `
+<h2>Segurança Residencial</h2>
+
+<p>As <strong>grades de segurança</strong> são elementos fundamentais para proteção de imóveis em São Paulo. Nossa empresa oferece soluções personalizadas que aliam <strong>segurança máxima</strong> com <strong>estética moderna</strong>.</p>
+<br>
+<h3>Importância das grades de segurança</h3>
+<p>Em uma cidade do porte de São Paulo, investir em proteção adequada é essencial. As grades de segurança funcionam como a primeira barreira contra invasões, protegendo janelas, portas e áreas vulneráveis do seu imóvel.</p>
+<br>
+<h3>Modelos e designs variados</h3>
+<p>Oferecemos desde grades tradicionais até designs contemporâneos que se integram perfeitamente à arquitetura moderna. Todos os projetos são desenvolvidos sob medida, respeitando o estilo do seu imóvel e as normas de segurança.</p>
+<br>
+<h3>Materiais de alta qualidade</h3>
+<p>Utilizamos ferro maciço, aço galvanizado e outros materiais resistentes à corrosão — especialmente importantes no clima de São Paulo. Todos os produtos recebem tratamento anticorrosivo e pintura eletrostática para maior durabilidade.</p>
+<br>
+<h3>Instalação especializada</h3>
+<p>Nossa equipe técnica em São Paulo possui vasta experiência em instalações residenciais e comerciais. Realizamos visitas técnicas gratuitas para avaliar as necessidades específicas de cada cliente e propor a melhor solução.</p>
+<br>
+<h3>Normas de segurança</h3>
+<p>Todas as instalações seguem rigorosamente as normas de segurança do Corpo de Bombeiros, garantindo rotas de fuga adequadas sem comprometer a proteção do imóvel.</p>
+<br>
+<h3>Manutenção e garantia</h3>
+<p>Oferecemos serviços de manutenção preventiva e corretiva, além de <strong>garantia estendida</strong> em todos os nossos produtos. A segurança da sua família ou empresa é nossa prioridade em cada projeto executado em São Paulo.</p>
+<br>
+<p><em>Proteja seu patrimônio com grades de segurança de qualidade superior, instaladas por profissionais especializados.</em></p>
+`,
+},
+
+{
+  slug: "corrimoes-e-guarda-corpos-em-sao-paulo",
+  title: "Corrimãos e Guarda-Corpos em São Paulo: Segurança e Elegância em Alturas",
+  excerpt:
+    "Soluções em corrimãos e guarda-corpos em São Paulo que unem segurança, estética e conformidade com as normas da ABNT.",
+  cover: heroCorrimoesGuardaCorpos, // ajuste o nome conforme o arquivo da imagem
+  date: "2025-01-25",
+  content: `
+<h2>Estruturas Metálicas</h2><br>
+
+<p>Corrimãos e guarda-corpos são elementos essenciais em qualquer edificação com diferenças de nível. Em São Paulo, nossa serralheria oferece soluções que atendem todas as normas técnicas sem abrir mão da estética.</p><br>
+ <br>
+<h3>Segurança em primeiro lugar</h3><br>
+<p>De acordo com as normas da ABNT, todo desnível superior a 19cm deve ter proteção adequada. Nossos guarda-corpos são projetados para suportar os esforços especificados, garantindo total segurança para sua família.</p><br>
+ <br>
+<h3>Variedade de estilos</h3><br>
+<p>Desde modelos clássicos em ferro trabalhado até designs minimalistas com aço inox e vidro, oferecemos soluções para todos os gostos arquitetônicos presentes em São Paulo. Cada projeto é desenvolvido em conjunto com o cliente.</p><br>
+ <br>
+<h3>Aplicações diversas</h3><br>
+<p>Instalamos corrimãos e guarda-corpos em escadas residenciais, varandas de apartamentos, mezaninos comerciais, coberturas e áreas industriais. Cada ambiente recebe tratamento específico conforme suas necessidades.</p><br>
+ <br>
+<h3>Materiais premium</h3><br>
+<p>Trabalhamos com aço carbono, aço inox 304 e 316, alumínio e combinações com vidro temperado. Todos os materiais são selecionados pensando em durabilidade e resistência ao clima de São Paulo.</p><br>
+ <br>
+<h3>Normas técnicas rigorosas</h3><br>
+<p>Todos os projetos seguem estritamente a NBR 14718 e outras normas pertinentes. Realizamos cálculos estruturais quando necessário e fornecemos ART (Anotação de Responsabilidade Técnica) de engenheiro.</p><br>
+ <br>
+<h3>Instalação profissional em São Paulo</h3><br>
+<p>Nossa equipe atende toda a região metropolitana, com agendamento flexível e execução rápida. Garantimos mínima interferência na rotina do local durante a instalação.</p><br>
+ <br>
+<h3>Acabamento impecável</h3><br>
+<p>Além da função estrutural, nossos corrimãos e guarda-corpos são verdadeiras peças decorativas. O acabamento final recebe atenção especial, com diversas opções de pintura e polimento.</p><br>
+ <br>
+<p><em>Conte com nossa expertise para instalar corrimãos e guarda-corpos seguros e elegantes em São Paulo.</em></p><br>
+`,
+},
+{
+  slug: "estruturas-metalicas-em-sao-paulo",
+  title: "Estruturas Metálicas em São Paulo: Soluções Robustas para Construção Civil",
+  excerpt:
+    "Projetos completos de estruturas metálicas em São Paulo — rapidez, resistência e economia para obras residenciais, comerciais e industriais.",
+  cover: heroEstruturasMetalicas, // ajuste o nome conforme o arquivo da imagem
+  date: "2025-01-28",
+  content: `
+<h2>Construção Civil</h2><br>
+
+<p>As <strong>estruturas metálicas</strong> revolucionaram a construção civil em São Paulo. Nossa serralheria especializada oferece projetos completos, fabricação e montagem de estruturas para os mais diversos fins.</p><br>
+
+<h3>Vantagens das estruturas metálicas</h3><br>
+<p>Comparadas às estruturas convencionais, as metálicas oferecem rapidez na execução, precisão dimensional, menor peso sobre fundações, vãos maiores sem pilares intermediários e sustentabilidade através da reciclagem do material.</p><br>
+
+<h3>Tipos de estruturas que fabricamos</h3><br>
+<p>Realizamos desde pequenas estruturas para ampliações residenciais até grandes galpões industriais. Incluindo mezaninos, coberturas, marquises, passarelas, torres de comunicação e estruturas especiais sob projeto.</p><br>
+
+<h3>Processo completo</h3><br>
+<p>Nosso serviço abrange todas as etapas: levantamento de necessidades, projeto estrutural com engenheiro responsável, fabricação em nossa oficina em São Paulo, transporte e montagem no local com equipe especializada.</p><br>
+
+<h3>Materiais certificados</h3><br>
+<p>Utilizamos apenas aço estrutural certificado, com laudos de qualidade que garantem as propriedades mecânicas necessárias. Todo material passa por controle de qualidade rigoroso antes da fabricação.</p><br>
+
+<h3>Eficiência e economia</h3><br>
+<p>Estruturas metálicas podem reduzir significativamente o prazo de obra, gerando economia nos custos indiretos. A precisão na fabricação minimiza desperdícios e retrabalhos, tornando a solução mais econômica no conjunto.</p><br>
+
+<h3>Aplicações em São Paulo</h3><br>
+<p>Atendemos projetos residenciais (casas, sobrados, ampliações), comerciais (lojas, escritórios, showrooms) e industriais (galpões, depósitos, fábricas). Cada projeto recebe engenharia dedicada.</p><br>
+
+<h3>Manutenção e durabilidade</h3><br>
+<p>Com tratamento anticorrosivo adequado e pintura de qualidade, as estruturas metálicas têm vida útil superior a 50 anos. Oferecemos planos de manutenção preventiva para garantir essa longevidade.</p><br>
+
+<p><em>Transforme seu projeto em realidade com estruturas metálicas de qualidade superior em São Paulo.</em></p><br>
+`,
+},
+{
+  slug: "portas-de-ferro-em-sao-paulo",
+  title: "Portas de Ferro em São Paulo: Resistência e Design Personalizados",
+  excerpt:
+    "Portas de ferro sob medida em São Paulo com máxima segurança, durabilidade e acabamento personalizado para residências e comércios.",
+  cover: heroPortasFerro, // ajuste conforme o nome do arquivo da imagem
+  date: "2025-02-01",
+  content: `
+<h2>Segurança Residencial</h2><br>
+
+<p>Portas de ferro são sinônimo de <strong>segurança</strong> e <strong>durabilidade</strong>. Em São Paulo, nossa serralheria cria portas sob medida que protegem seu patrimônio sem comprometer a estética do seu imóvel.</p><br>
+
+<h3>Segurança reforçada</h3><br>
+<p>As portas de ferro oferecem proteção incomparável contra tentativas de arrombamento. Fabricadas com perfis robustos e fechaduras de alta segurança, representam verdadeiras barreiras de proteção em residências e estabelecimentos comerciais.</p><br>
+
+<h3>Designs exclusivos</h3><br>
+<p>Cada porta é uma peça única, desenvolvida conforme o gosto do cliente. Desde modelos sóbrios e discretos até portões trabalhados artisticamente, oferecemos infinitas possibilidades de personalização para o mercado de São Paulo.</p><br>
+
+<h3>Tipos de portas que fabricamos</h3><br>
+<p>Produzimos portas de ferro para entrada principal, portas de serviço, portões sociais, portas para áreas externas, grades articuladas e portas de segurança para estabelecimentos comerciais.</p><br>
+
+<h3>Processo de fabricação</h3><br>
+<p>Todo processo acontece em nossa oficina em São Paulo: corte de perfis, soldagem, tratamento anticorrosivo, pintura eletrostática ou a óleo, instalação de fechaduras e acessórios, e finalmente montagem no local.</p><br>
+
+<h3>Integração arquitetônica</h3><br>
+<p>Trabalhamos em conjunto com arquitetos e proprietários para desenvolver portas que se harmonizem perfeitamente com o projeto arquitetônico. As portas de ferro podem receber diversos acabamentos que complementam qualquer estilo.</p><br>
+
+<h3>Durabilidade garantida</h3><br>
+<p>Com manutenção mínima, as portas de ferro mantêm sua integridade por décadas. Todos os produtos recebem tratamento anticorrosivo em múltiplas camadas, essencial para resistir ao clima de São Paulo.</p><br>
+
+<h3>Instalação e garantia</h3><br>
+<p>Nossa equipe técnica realiza instalação profissional, garantindo alinhamento perfeito, funcionamento suave e total segurança. Oferecemos garantia de fabricação e instalação em todos os projetos.</p><br>
+
+<p><em>Proteja e valorize seu imóvel com portas de ferro de qualidade superior, fabricadas em São Paulo</em></p><br>
+`,
+},
+
+{
+  slug: "janelas-de-ferro-em-sao-paulo",
+  title: "Janelas de Ferro em São Paulo: Modernidade e Funcionalidade em Esquadrias",
+  excerpt:
+    "Janelas de ferro sob medida em São Paulo que unem estética industrial, resistência e excelente iluminação natural para residências e comércios.",
+  cover: heroJanelasFerro, // ajuste conforme o nome do arquivo da imagem
+  date: "2025-02-04",
+  content: `
+<h2>Esquadrias Metálicas</h2><br>
+
+<p>As <strong>janelas de ferro</strong> estão em alta na arquitetura paulistana. Nossa serralheria fabrica esquadrias metálicas que combinam resistência, segurança e estética industrial moderna, tão valorizada em projetos contemporâneos.</p><br>
+
+<h3>Tendência arquitetônica</h3><br>
+<p>O estilo industrial e contemporâneo valoriza as janelas de ferro, especialmente nos projetos de lofts, studios e imóveis modernos em São Paulo. Elas conferem personalidade e sofisticação aos ambientes.</p><br>
+
+<h3>Vantagens das janelas metálicas</h3><br>
+<p>Diferentemente de outros materiais, as janelas de ferro permitem perfis mais finos com maior área envidraçada, proporcionando mais luz natural. São extremamente duráveis e praticamente não sofrem deformações com o tempo.</p><br>
+
+<h3>Modelos disponíveis</h3><br>
+<p>Fabricamos janelas de correr, maxim-ar, basculantes, pivotantes, guilhotina, venezianas e modelos especiais sob projeto. Cada tipo atende necessidades específicas de ventilação e iluminação.</p><br>
+
+<h3>Personalização completa</h3><br>
+<p>As dimensões, divisões, tipo de abertura, cor e acabamento são totalmente customizáveis. Trabalhamos com vidros comuns, temperados, laminados ou insulados, conforme a necessidade de cada projeto em São Paulo.</p><br>
+
+<h3>Eficiência energética</h3><br>
+<p>Quando combinadas com vidros adequados, as janelas de ferro contribuem para o conforto térmico e acústico dos ambientes. Importante consideração no clima variável de São Paulo.</p><br>
+
+<h3>Processo de fabricação</h3><br>
+<p>Utilizamos perfis de aço de alta qualidade, realizamos soldas precisas, aplicamos tratamento anticorrosivo, pintura eletrostática na cor desejada e instalação de vidros e ferragens de primeira linha.</p><br>
+
+<h3>Instalação em São Paulo</h3><br>
+<p>Nossa equipe atende projetos residenciais e comerciais em toda região metropolitana. Realizamos medições precisas, fabricação sob medida e instalação com acabamento profissional.</p><br>
+
+<p><em>Transforme seus ambientes com janelas de ferro que aliam funcionalidade e design em São Paulo.</em></p><br>
+`,
+},
+
+{
+  slug: "coberturas-metalicas-em-sao-paulo",
+  title: "Coberturas Metálicas em São Paulo: Proteção e Versatilidade para Seu Espaço",
+  excerpt:
+    "Coberturas metálicas sob medida em São Paulo — proteção, design e durabilidade para áreas residenciais, comerciais e industriais.",
+  cover: heroCoberturasMetalicas, // ajuste conforme o nome real da imagem
+  date: "2025-02-07",
+  content: `
+<h2>Construção Civil</h2><br>
+
+<p><strong>Coberturas metálicas</strong> são soluções versáteis para proteger áreas externas e internas. Em São Paulo, nossa serralheria projeta e executa coberturas que aliam funcionalidade, estética e durabilidade.</p><br>
+
+<h3>Aplicações diversas</h3><br>
+<p>As coberturas metálicas servem para garagens, áreas de lazer, quadras esportivas, playgrounds, entradas de edifícios, terraços, galpões industriais e comerciais. Cada aplicação recebe projeto específico.</p><br>
+
+<h3>Tipos de coberturas</h3><br>
+<p>Executamos coberturas em estrutura metálica com telhas termoacústicas, policarbonato, vidro laminado, telhas metálicas zipadas, sheds industriais e coberturas especiais com design arquitetônico exclusivo.</p><br>
+
+<h3>Vantagens da estrutura metálica</h3><br>
+<p>Comparada a outros sistemas, a cobertura metálica oferece vãos maiores sem apoios intermediários, execução mais rápida, menor peso na estrutura existente, manutenção reduzida e excelente relação custo-benefício.</p><br>
+
+<h3>Projeto personalizado</h3><br>
+<p>Cada cobertura é desenvolvida considerando características específicas: dimensões do espaço, tipo de fechamento desejado, necessidades de iluminação natural, drenagem de águas pluviais e integração com a edificação existente.</p><br>
+
+<h3>Qualidade dos materiais</h3><br>
+<p>Utilizamos perfis estruturais certificados, telhas de fabricantes renomados, sistemas de fixação apropriados e tratamento anticorrosivo completo. A qualidade dos materiais garante longa vida útil da cobertura.</p><br>
+
+<h3>Instalação especializada em São Paulo</h3><br>
+<p>Nossa equipe possui experiência em instalações dos mais variados portes. Desde pequenas coberturas residenciais até grandes projetos industriais na região metropolitana de São Paulo.</p><br>
+
+<h3>Garantia e manutenção</h3><br>
+<p>Oferecemos garantia de fabricação e instalação, além de serviços de manutenção preventiva. Inspeções periódicas garantem o perfeito funcionamento dos sistemas de drenagem e a integridade da estrutura.</p><br>
+
+<p><em>Proteja seus espaços com coberturas metálicas de qualidade, projetadas e instaladas em São Paulo.</em></p><br>
+`,
+},
+
+{
+  slug: "escadas-metalicas-em-sao-paulo",
+  title: "Escadas Metálicas em São Paulo: Soluções Verticais com Design e Segurança",
+  excerpt:
+    "Escadas metálicas sob medida em São Paulo — design moderno, resistência e segurança para residências, comércios e indústrias.",
+  cover: heroEscadasMetalicas, // ajuste conforme o nome da imagem real
+  date: "2025-02-10",
+  content: `
+<h2>Estruturas Metálicas</h2><br>
+
+<p><strong>Escadas metálicas</strong> são soluções elegantes e funcionais para vencer desníveis em projetos residenciais, comerciais e industriais. Em São Paulo, nossa serralheria desenvolve escadas sob medida que combinam engenharia e estética.</p><br>
+
+<h3>Versatilidade de aplicações</h3><br>
+<p>Fabricamos escadas para residências (internas e externas), edifícios comerciais, mezaninos, áreas industriais, escadas de emergência, escadas caracol e projetos especiais com design diferenciado.</p><br>
+
+<h3>Tipos e modelos</h3><br>
+<p>Oferecemos escadas retas, em L, em U, caracol, helicoidais, escadas flutuantes (sem espelho), escadas industriais tipo marinheiro, escadas externas com proteção anticorrosiva especial e modelos exclusivos sob projeto.</p><br>
+
+<h3>Materiais utilizados</h3><br>
+<p>Trabalhamos com estrutura em aço carbono, aço inox, degraus em chapa xadrez, madeira, mármore ou granito, guarda-corpos integrados e corrimãos em diversos acabamentos. Cada material é selecionado conforme o ambiente de instalação.</p><br>
+
+<h3>Design contemporâneo</h3><br>
+<p>As escadas metálicas modernas são verdadeiras peças de design. Perfis esbeltos, transparência visual através dos degraus vazados e combinações com vidro criam ambientes sofisticados tão apreciados na arquitetura de São Paulo.</p><br>
+
+<h3>Cálculo estrutural</h3><br>
+<p>Todas as escadas recebem cálculo estrutural adequado, considerando cargas de utilização, vãos, tipos de apoio e normas técnicas vigentes. Fornecemos ART de engenheiro responsável quando necessário.</p><br>
+
+<h3>Normas de segurança</h3><br>
+<p>Seguimos rigorosamente as normas da ABNT para dimensionamento de degraus, alturas, larguras mínimas, guarda-corpos e corrimãos. A segurança dos usuários é prioridade absoluta em cada projeto.</p><br>
+
+<h3>Instalação em São Paulo</h3><br>
+<p>Nossa equipe realiza medições precisas no local, fabricação controlada em oficina e montagem profissional. Minimizamos interferências durante a instalação e garantimos acabamento impecável.</p><br>
+
+<p><em>Valorize seu projeto com escadas metálicas que unem funcionalidade, segurança e beleza em São Paulo.</em></p><br>
+`,
+},
+{
+  slug: "serralheria-industrial-em-sao-paulo",
+  title: "Serralheria Industrial em São Paulo: Soluções Sob Medida para Sua Empresa",
+  excerpt:
+    "Serralheria industrial em São Paulo com soluções sob medida para estruturas metálicas, plataformas, escadas e projetos industriais completos.",
+  cover: heroSerralheriaIndustrial, 
+  date: "2025-02-13",
+  content: `
+<h2>Industrial</h2><br>
+
+<p>A <strong>serralheria industrial</strong> atende necessidades específicas do setor produtivo em São Paulo. Nossa empresa oferece soluções customizadas para indústrias, comércios de grande porte e empreendimentos que exigem estruturas metálicas robustas.</p><br>
+
+<h3>Serviços especializados</h3><br>
+<p>Desenvolvemos projetos industriais completos incluindo estruturas de sustentação para equipamentos, plataformas de trabalho, passarelas de acesso, escadas industriais, guarda-corpos perimetrais, tanques e reservatórios metálicos, transportadores e muito mais.</p><br>
+
+<h3>Capacidade produtiva</h3><br>
+<p>Nossa oficina em São Paulo está equipada com maquinário industrial de última geração: guilhotinas, calandra, prensas, máquinas de solda MIG/MAG e TIG, furadeiras de coluna, esmerilhadeiras e equipamentos de corte CNC.</p><br>
+
+<h3>Equipe técnica qualificada</h3><br>
+<p>Contamos com soldadores certificados, caldeireiros experientes, projetistas e engenheiros que desenvolvem soluções técnicas para os mais variados desafios industriais em São Paulo.</p><br>
+
+<h3>Gestão de projetos</h3><br>
+<p>Oferecemos gerenciamento completo desde o conceito inicial até a entrega final. Incluindo elaboração de projetos executivos, cronograma de fabricação e montagem, fornecimento de materiais certificados e documentação técnica completa.</p><br>
+
+<h3>Normas e certificações</h3><br>
+<p>Todos os serviços seguem normas regulamentadoras, especialmente NR-12, NR-13 e NR-35. Fornecemos laudos, certificados de qualidade dos materiais e documentação técnica necessária para órgãos fiscalizadores.</p><br>
+
+<h3>Manutenção industrial</h3><br>
+<p>Além da fabricação, oferecemos serviços de manutenção preventiva e corretiva em estruturas metálicas industriais. Inspeções periódicas garantem a segurança e longevidade dos equipamentos.</p><br>
+
+<h3>Atendimento em São Paulo</h3><br>
+<p>Atendemos indústrias em toda região metropolitana de São Paulo e interior. Temos flexibilidade para executar serviços em finais de semana e horários alternativos, minimizando impactos na produção.</p><br>
+
+<p><em>Conte com nossa expertise em serralheria industrial para soluções personalizadas em São Paulo.</em></p><br>
+`,
+},
+
+{
+  slug: "manutencao-e-reparos-em-serralheria-em-sao-paulo",
+  title: "Manutenção e Reparos em Serralheria em São Paulo: Prolongue a Vida Útil de Suas Estruturas",
+  excerpt:
+    "Serviços especializados de manutenção e reparos em serralheria em São Paulo — prolongue a durabilidade e garanta a segurança de suas estruturas metálicas.",
+  cover: heroManutencaoSerralheria, 
+  date: "2025-02-17",
+  content: `
+<h2>Manutenção</h2><br>
+
+<p>A <strong>manutenção preventiva e corretiva</strong> de estruturas metálicas é essencial para garantir durabilidade e segurança. Em São Paulo, nossa equipe especializada oferece serviços completos de manutenção e reparos em serralheria.</p><br>
+
+<h3>Importância da manutenção</h3><br>
+<p>Estruturas metálicas expostas ao clima de São Paulo necessitam manutenção regular para evitar oxidação, desgaste de componentes mecânicos e comprometimento estrutural. A manutenção preventiva é sempre mais econômica que reparos emergenciais.</p><br>
+
+<h3>Serviços de manutenção preventiva</h3><br>
+<p>Realizamos inspeções periódicas, lubrificação de partes móveis, ajustes de fechaduras e dobradiças, verificação de soldas e fixações, limpeza e retoque de pintura, e testes de funcionamento de sistemas automatizados.</p><br>
+
+<h3>Reparos especializados</h3><br>
+<p>Nossa equipe está preparada para solucionar problemas em portões automáticos, conserto de grades e portas danificadas, recuperação de estruturas oxidadas, substituição de componentes quebrados, reforço estrutural quando necessário e restauração de peças antigas.</p><br>
+
+<h3>Portões automáticos</h3><br>
+<p>Oferecemos manutenção completa em sistemas de automação incluindo motores, centrais de comando, sensores de segurança, controles remotos e fotocélulas. Atendimento emergencial 24h para casos urgentes.</p><br>
+
+<h3>Recuperação de estruturas</h3><br>
+<p>Estruturas metálicas que apresentam oxidação podem ser recuperadas através de tratamento anticorrosivo adequado. Removemos a ferrugem, aplicamos primers especiais e nova pintura, devolvendo a integridade original.</p><br>
+
+<h3>Pinturas e acabamentos</h3><br>
+<p>Realizamos repintura de portões, grades, janelas e estruturas metálicas. Utilizamos tintas de alta qualidade com proteção UV e anticorrosiva, garantindo acabamento profissional e durabilidade.</p><br>
+
+<h3>Atendimento em São Paulo</h3><br>
+<p>Nossa equipe móvel atende emergências e manutenções programadas em toda região metropolitana. Levamos ferramentas e equipamentos necessários para resolver a maioria dos problemas no local.</p><br>
+
+<p><em>Garanta a longevidade de suas estruturas metálicas com manutenção profissional em São Paulo.</em></p><br>
+`,
+},
 
 ];
 

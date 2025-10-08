@@ -5,6 +5,7 @@ import Cta from "@/components/Cta";
 import QuemSomos from "@/components/QuemSomos";
 import Faq from "@/components/Faq";
 import GaleriaCarousel from "@/components/GaleriaCarousel";
+import VideoSection from "@/components/Video-home";
 
 export default function Home() {
   return (
@@ -16,8 +17,8 @@ export default function Home() {
         <ServicosHome />
         <Faq />
         <GaleriaCarousel />
-
-        <Cta />
+        <VideoSection />
+          <Cta />
       </main>
     </>
   );
