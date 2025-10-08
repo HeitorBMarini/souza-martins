@@ -12,7 +12,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   return (
     <>
       <HeaderSecondary />
-      <main className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-8">
+      <main className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-4">
         <article className="prose prose-zinc max-w-none">
           {post.cover && (
             <div className="relative w-9/12 aspect-[1/1] h-full mb-6 overflow-hidden">

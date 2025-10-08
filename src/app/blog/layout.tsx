@@ -15,7 +15,7 @@ export default function BlogLayout({ children }: { children: ReactNode }) {
                     <TitleBlog />
                 </div>
             </div>
-            <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">{children}</main>
+            <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">{children}</main>
         </>
     );
 }

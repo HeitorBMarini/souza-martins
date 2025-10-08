@@ -452,8 +452,8 @@ export const POSTS: Post[] = [
   title: "Portões Automáticos em São Paulo: Segurança e Comodidade para Seu Imóvel",
   excerpt:
     "Modernize seu imóvel com portões automáticos em São Paulo — segurança, praticidade e valorização com tecnologia de ponta.",
-  cover: heroPortoesAutomaticos, // ajuste o nome da imagem se necessário
-  date: "2025-01-20",
+  cover: heroPortoesAutomaticos, 
+  date: "2025-08-10",
   content: `
 <h2>Automação Residencial</h2>
 
@@ -484,7 +484,7 @@ export const POSTS: Post[] = [
   excerpt:
     "Descubra como as grades de segurança em São Paulo protegem seu imóvel com design moderno, materiais resistentes e instalação especializada.",
   cover: heroGradesSeguranca,
-  date: "2025-01-22",
+  date: "2025-08-10",
   content: `
 <h2>Segurança Residencial</h2>
 
@@ -517,8 +517,8 @@ export const POSTS: Post[] = [
   title: "Corrimãos e Guarda-Corpos em São Paulo: Segurança e Elegância em Alturas",
   excerpt:
     "Soluções em corrimãos e guarda-corpos em São Paulo que unem segurança, estética e conformidade com as normas da ABNT.",
-  cover: heroCorrimoesGuardaCorpos, // ajuste o nome conforme o arquivo da imagem
-  date: "2025-01-25",
+  cover: heroCorrimoesGuardaCorpos, 
+  date: "2025-08-10",
   content: `
 <h2>Estruturas Metálicas</h2><br>
 
@@ -553,8 +553,8 @@ export const POSTS: Post[] = [
   title: "Estruturas Metálicas em São Paulo: Soluções Robustas para Construção Civil",
   excerpt:
     "Projetos completos de estruturas metálicas em São Paulo — rapidez, resistência e economia para obras residenciais, comerciais e industriais.",
-  cover: heroEstruturasMetalicas, // ajuste o nome conforme o arquivo da imagem
-  date: "2025-01-28",
+  cover: heroEstruturasMetalicas, 
+  date: "2025-08-10",
   content: `
 <h2>Construção Civil</h2><br>
 
@@ -589,7 +589,7 @@ export const POSTS: Post[] = [
   title: "Portas de Ferro em São Paulo: Resistência e Design Personalizados",
   excerpt:
     "Portas de ferro sob medida em São Paulo com máxima segurança, durabilidade e acabamento personalizado para residências e comércios.",
-  cover: heroPortasFerro, // ajuste conforme o nome do arquivo da imagem
+  cover: heroPortasFerro, 
   date: "2025-02-01",
   content: `
 <h2>Segurança Residencial</h2><br>
@@ -626,8 +626,8 @@ export const POSTS: Post[] = [
   title: "Janelas de Ferro em São Paulo: Modernidade e Funcionalidade em Esquadrias",
   excerpt:
     "Janelas de ferro sob medida em São Paulo que unem estética industrial, resistência e excelente iluminação natural para residências e comércios.",
-  cover: heroJanelasFerro, // ajuste conforme o nome do arquivo da imagem
-  date: "2025-02-04",
+  cover: heroJanelasFerro, 
+  date: "2025-08-10",
   content: `
 <h2>Esquadrias Metálicas</h2><br>
 
@@ -663,8 +663,8 @@ export const POSTS: Post[] = [
   title: "Coberturas Metálicas em São Paulo: Proteção e Versatilidade para Seu Espaço",
   excerpt:
     "Coberturas metálicas sob medida em São Paulo — proteção, design e durabilidade para áreas residenciais, comerciais e industriais.",
-  cover: heroCoberturasMetalicas, // ajuste conforme o nome real da imagem
-  date: "2025-02-07",
+  cover: heroCoberturasMetalicas, 
+  date: "2025-08-10",
   content: `
 <h2>Construção Civil</h2><br>
 
@@ -700,8 +700,8 @@ export const POSTS: Post[] = [
   title: "Escadas Metálicas em São Paulo: Soluções Verticais com Design e Segurança",
   excerpt:
     "Escadas metálicas sob medida em São Paulo — design moderno, resistência e segurança para residências, comércios e indústrias.",
-  cover: heroEscadasMetalicas, // ajuste conforme o nome da imagem real
-  date: "2025-02-10",
+  cover: heroEscadasMetalicas, 
+  date: "2025-08-10",
   content: `
 <h2>Estruturas Metálicas</h2><br>
 
@@ -737,7 +737,7 @@ export const POSTS: Post[] = [
   excerpt:
     "Serralheria industrial em São Paulo com soluções sob medida para estruturas metálicas, plataformas, escadas e projetos industriais completos.",
   cover: heroSerralheriaIndustrial, 
-  date: "2025-02-13",
+  date: "2025-08-10",
   content: `
 <h2>Industrial</h2><br>
 
@@ -774,7 +774,7 @@ export const POSTS: Post[] = [
   excerpt:
     "Serviços especializados de manutenção e reparos em serralheria em São Paulo — prolongue a durabilidade e garanta a segurança de suas estruturas metálicas.",
   cover: heroManutencaoSerralheria, 
-  date: "2025-02-17",
+  date: "2025-08-10",
   content: `
 <h2>Manutenção</h2><br>
 
