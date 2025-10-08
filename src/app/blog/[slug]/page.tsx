@@ -25,6 +25,9 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             </div>
           )}
 
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+
+          
           <div className="mb-8">
             {(() => {
               const phone = "5511976159174"; 
@@ -51,9 +54,6 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               );
             })()}
           </div>
-
-          {/* conteúdo do post em HTML */}
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
       </main>
 
