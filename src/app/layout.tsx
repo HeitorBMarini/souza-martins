@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import ButtonFixed from "@/components/ButtonFixed";
 import WhatsappButton from "@/components/WhtasappButton";
-
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,6 +33,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+                <Analytics/>
+        
         {children}
         <ButtonFixed />
         <WhatsappButton />

@@ -4,7 +4,6 @@ import HeaderSecondary from "@/components/HeaderSecondary";
 import BlogRail from "@/components/BlogRail";
 import BreadcrumbBlog from "./BreadCrumbClient";
 import TitleBlog from "./TitleBread";
-
 export default function BlogLayout({ children }: { children: ReactNode }) {
     return (
         <>
